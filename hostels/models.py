@@ -64,12 +64,36 @@ class Amenities(models.Model):
       def __unicode__(self):
        return self.name_of_amenities
 
+class HostelAdmin(admin.ModelAdmin):
+    list_display=('manager','website','location')
+    search_fields =('hostel_name','location')
+    list_filter =('location',)
+    #inlines=[InstitutionInline]
 
-'''
+class InstitutionAdmin(admin.ModelAdmin):
+    list_display=('institution_name','website','location')
+    search_fields =('institution_name','hostels','location')
+    list_filter =('institution_name',)
+
+class StudentAdmin(admin.ModelAdmin):
+    list_display=('gender','id_number','phone_number','first_name','last_name',
+    'program_of_study')
+    search_fields =('id_number','last_name','first_name')
+    list_filter =('id_number',)
+    
+class ReservationAdmin(admin.ModelAdmin):
+    list_display=('status','date_of_registration')
+    search_fields =('students',' hostel_name')
+    list_filter=('hostel_name','students',)
+
+class InstitutionInline(admin.TabularInline):
+    model=Institution     
+    
+
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)
-admin.site.register(Rooms,RoomsAdmin)
 admin.site.register(Reservation,ReservationAdmin)
-admin.site.register(Amenities,AmenitiesAdmin) 
-'''
+admin.site.register(Amenities)
+admin.site.register(Rooms) 
+
