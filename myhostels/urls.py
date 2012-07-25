@@ -10,25 +10,11 @@ urlpatterns = patterns('',
     # url(r'^myhostels/', include('myhostels.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
-<<<<<<< HEAD
-
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
-=======
-     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-    
+    url(r'^hostels/', include('hostels.urls')),
 
-    # Uncomment the next line to enable the admin:
-     url(r'^admin/', include(admin.site.urls)),
-
-=======
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-      url(r'^admin/', include(admin.site.urls)),
-      url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
->>>>>>> 4354c45a2b5007eba728989a8bfe97cf95b38172
 )
