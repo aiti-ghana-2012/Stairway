@@ -4,7 +4,10 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 import os
 SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+<<<<<<< HEAD
 
+=======
+>>>>>>> 474d9e8cb47bb0cb36a741528c55ac6ee76b7706
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -74,9 +77,13 @@ STATIC_ROOT = 'static/'
 STATIC_URL = '/static/'
 
 # Additional locations of static files
+<<<<<<< HEAD
 STATICFILES_DIRS = (
     os.path.join(SITE_ROOT, 'images')
 
+=======
+STATICFILES_DIRS = (os.path.join(SITE_ROOT, 'images'),
+>>>>>>> 474d9e8cb47bb0cb36a741528c55ac6ee76b7706
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
