@@ -15,7 +15,7 @@ def hostels_list(request):
     pass
 
 def hostels_detail(request,id,showparticularhostel):
-    pass
+   return render_to_response('hostels/display_particular_hostel.html, {}')
 
 
 
