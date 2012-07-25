@@ -88,17 +88,8 @@ class ReservationAdmin(admin.ModelAdmin):
     list_filter=('hostel_name','students',)
 
 class InstitutionInline(admin.TabularInline):
-    model=Institution     
+      model=Institution     
     
-
-<<<<<<< HEAD
-admin.site.register(Hostel)
-admin.site.register(Institution) 
-admin.site.register(Student)
-admin.site.register(Rooms)
-admin.site.register(Reservation)
-admin.site.register(Amenities) 
-=======
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)

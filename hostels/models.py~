@@ -34,12 +34,11 @@ class Student(models.Model):
       program_of_study = models.CharField(max_length = 255)
       email = models.EmailField()
       hostels = models.ForeignKey(Hostel)
-      address = models.TextField(max_length=50)
       LEVEL_IN_SCHOOL_CHOICES= (('100','100'), ('200','200'), ('300','300'), ('400','400'))
-      level = models.IntegerField(max_length = 1, choices = LEVEL_IN_SCHOOL_CHOICES)
-      picture = models.ImageField(upload_to 'images/uploads/')
+      level = models.CharField(max_length = 4, choices = LEVEL_IN_SCHOOL_CHOICES)
+      picture = models.ImageField(upload_to = 'images/uploads/')
       def __unicode__(self):
-            return self.id_number
+            return str(self.id_number)
 
 class Rooms(models.Model):
       room_number = models.IntegerField()
@@ -64,6 +63,7 @@ class Amenities(models.Model):
       room = models.ManyToManyField(Rooms)
       def __unicode__(self):
             return self.name_of_amenities
+
 
 class HostelAdmin(admin.ModelAdmin):
     list_display=('manager','website','location')
