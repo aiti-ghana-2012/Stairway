@@ -1,0 +1,25 @@
+# Create your views here.
+from django.template import Context, loader
+from django.http import HttpResponse
+
+from models import Hostel,Institution,Student,Rooms,Amenities,Reservation 
+
+
+def hostels_list(request):
+    hostels_list = Hostel.objects.all()
+    
+    print type(hostels_list)
+    print hostels_list
+    
+    return HttpResponse('This should be a list of posts!')
+
+def post_detail(request, id, showComments=False):
+    pass
+    
+def post_search(request, term):
+    pass
+
+def home(request):
+    print 'it works'
+    return HttpResponse('hello world. Ete zene?') 
+

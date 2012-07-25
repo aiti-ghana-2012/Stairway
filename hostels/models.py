@@ -36,6 +36,7 @@ class Student(models.Model):
       address = models.TextField(max_length=50)
       LEVEL_IN_SCHOOL_CHOICES = (('100','Freshman'),('200','continuing'),('300','continuing'),('400','continuing'),('600','graduate'),)
       level = models.IntegerField(max_length=1,choices=LEVEL_IN_SCHOOL_CHOICES)
+      post=models.ForeignKey(Rooms,related_name='studentsss')
       def __unicode__(self):
        return self.id_number
 
