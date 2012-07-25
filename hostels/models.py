@@ -9,6 +9,7 @@ class Hostel(models.Model):
       manager = models.ForeignKey(User)
       manager_name = models.TextField()
       hostel_name = models.CharField(max_length = 255)
+      room=models.ForeignKey(Rooms)
       #website = models.URLField()
       def __unicode__(self):
             return self.hostel_name
@@ -77,8 +78,7 @@ class InstitutionAdmin(admin.ModelAdmin):
     list_filter =('institution_name',)
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display=('gender','id_number','phone_number','first_name','last_name',
-    'program_of_study')
+    list_display=('gender','id_number','phone_number','first_name','last_name','program_of_study')
     search_fields =('id_number','last_name','first_name')
     list_filter =('id_number',)
     
@@ -90,6 +90,11 @@ class ReservationAdmin(admin.ModelAdmin):
 class InstitutionInline(admin.TabularInline):
       model=Institution     
     
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 4354c45a2b5007eba728989a8bfe97cf95b38172
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)
@@ -97,4 +102,4 @@ admin.site.register(Reservation,ReservationAdmin)
 admin.site.register(Amenities)
 admin.site.register(Rooms) 
 
->>>>>>> 0bb5324c943e8a895b2e4e224d393b2d7f8a393e
+
