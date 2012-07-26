@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
@@ -11,7 +10,7 @@ class Hostel(models.Model):
       manager = models.ForeignKey(User)
       manager_name = models.TextField()
       hostel_name = models.CharField(max_length = 255)
-      room=models.ForeignKey(Rooms)
+      #room=models.ForeignKey(Rooms)
       #website = models.URLField()
       def __unicode__(self):
             return self.hostel_name
@@ -69,13 +68,13 @@ class Amenities(models.Model):
 
 
 class HostelAdmin(admin.ModelAdmin):
-    list_display=('manager','website','location')
-    search_fields =('hostel_name','location')
+    list_display=('manager','location')
+    search_fields =('location',)
     list_filter =('location',)
     #inlines=[InstitutionInline]
 
 class InstitutionAdmin(admin.ModelAdmin):
-    list_display=('institution_name','website','location')
+    list_display=('institution_name','location')
     search_fields =('institution_name','hostels','location')
     list_filter =('institution_name',)
 
@@ -86,8 +85,8 @@ class StudentAdmin(admin.ModelAdmin):
     
 class ReservationAdmin(admin.ModelAdmin):
     list_display=('status','date_of_registration')
-    search_fields =('students',' hostel_name')
-    list_filter=('hostel_name','students',)
+    search_fields =('students',)
+    list_filter=('students',)
 
 class InstitutionInline(admin.TabularInline):
     model=Institution     
@@ -101,9 +100,4 @@ admin.site.register(Reservation,ReservationAdmin)
 admin.site.register(Amenities)
 admin.site.register(Rooms) 
 
-<<<<<<< HEAD
->>>>>>> 0bb5324c943e8a895b2e4e224d393b2d7f8a393e
->>>>>>> 474d9e8cb47bb0cb36a741528c55ac6ee76b7706
-=======
 
->>>>>>> c97d1ef9ea01d8b0c0b242ae3e03cf5fcf857a92
