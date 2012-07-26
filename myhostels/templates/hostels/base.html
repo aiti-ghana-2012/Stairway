@@ -54,27 +54,12 @@ $('.carousel').carousel()
 <!-- Middle
 =============================================== -->
 
-<!-- Bottom
-=============================================== -->
-<div class="row">
-  <div class="span4">
-    <div class="login-form">
-                  <h2>Login</h2>
-                  <form action="">
-                      <fieldset>
-                          <div class="clearfix">
-                              <input type="text" placeholder="Username">
-                          </div>
-                          <div class="clearfix">
-                              <input type="password" placeholder="Password">
-                          </div>
-                          <button class="btn btn-primary" type="submit">Sign in</button>
-                      </fieldset>
-                  </form>
-              </div>
-  </div>
-  
-</div>
+
+
+{% block content %}
+
+{% endblock %}
+
 <!-- Footer
 =============================================== -->
 <footer class="footer">
@@ -116,9 +101,6 @@ $('.carousel').carousel()
     <script src="bootstrap/docs/assets/js/application.js"></script>
 
 
-{% block content %}
-
-{% endblock %}
 
 
 </body>
