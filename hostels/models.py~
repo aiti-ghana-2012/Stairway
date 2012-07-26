@@ -34,12 +34,11 @@ class Student(models.Model):
       program_of_study = models.CharField(max_length = 255)
       email = models.EmailField()
       hostels = models.ForeignKey(Hostel)
-      address = models.TextField(max_length=50)
       LEVEL_IN_SCHOOL_CHOICES= (('100','100'), ('200','200'), ('300','300'), ('400','400'))
-      level = models.IntegerField(max_length = 1, choices = LEVEL_IN_SCHOOL_CHOICES)
-      picture = models.ImageField(upload_to 'images/uploads/')
+      level = models.CharField(max_length = 4, choices = LEVEL_IN_SCHOOL_CHOICES)
+      picture = models.ImageField(upload_to = 'images/uploads/')
       def __unicode__(self):
-            return self.id_number
+            return str(self.id_number)
 
 class Rooms(models.Model):
       room_number = models.IntegerField()
@@ -65,6 +64,7 @@ class Amenities(models.Model):
       def __unicode__(self):
             return self.name_of_amenities
 
+
 class HostelAdmin(admin.ModelAdmin):
     list_display=('manager','website','location')
     search_fields =('hostel_name','location')
@@ -77,8 +77,7 @@ class InstitutionAdmin(admin.ModelAdmin):
     list_filter =('institution_name',)
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display=('gender','id_number','phone_number','first_name','last_name',
-    'program_of_study')
+    list_display=('gender','id_number','phone_number','first_name','last_name','program_of_study')
     search_fields =('id_number','last_name','first_name')
     list_filter =('id_number',)
     
@@ -91,14 +90,8 @@ class InstitutionInline(admin.TabularInline):
     model=Institution     
     
 
-<<<<<<< HEAD
-admin.site.register(Hostel)
-admin.site.register(Institution) 
-admin.site.register(Student)
-admin.site.register(Rooms)
-admin.site.register(Reservation)
-admin.site.register(Amenities) 
-=======
+
+
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)
@@ -106,4 +99,4 @@ admin.site.register(Reservation,ReservationAdmin)
 admin.site.register(Amenities)
 admin.site.register(Rooms) 
 
->>>>>>> 0bb5324c943e8a895b2e4e224d393b2d7f8a393e
+

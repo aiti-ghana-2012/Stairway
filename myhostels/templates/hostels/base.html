@@ -1,0 +1,84 @@
+<!-- parent template  -->
+<!DOCTYPE html>  <!-- this is just a declaration which tells the browser the version of html being used   -->
+<html>
+<head>
+
+<title>frontpage </title>
+</head>
+<body style="background-color:snow" leftmargin="70px" topmargin="70px" marginwidth="55px" marginheight="65px">
+<div id="container" style="width:500px" >
+
+
+<div id="header" style="background-color:#FFA500;">
+<h1 style="margin-bottom:0;">Stairway e-Hostels</h1>
+<h5 align="left"><i>The online resource for students </i></h5></div>
+
+<table align="right" width="150" border="0" cellspacing="0" cellpadding="0">
+<tr>
+<td colspan="2">Search</td>
+</tr>
+<tr>
+<td> <input type="text" name="Query" size="15"/></td>
+<td><input type="button" name="Search" value="GO!!"></td>
+</tr>
+</table>
+</div>
+
+<div>
+<h4 align="left">About Us</h4>
+<h4 align="middle">News and Events</h4>
+<h4 align="center">Room Reservation</h4>
+<h4 align="right">Photo Gallery </h4>
+</div>
+
+<div id="menu" style="background-color:#808000;height:200px;width:100px;float:left;">
+<b>INSTITUTIONS</b><br/>
+
+<h4>KNUST</h4><br />
+<button type="submit" title="Hostels around KNUST">
+<div class="o"><div class="i">Hostels around KNUST
+</div>
+</div>
+</button><br />
+
+<h4>University of Ghana</h4>
+<button type="submit" title="Hostels around UG">
+<div class="o"><div class="i">Hostels around UG
+</div>
+</div>
+</button><br />
+
+<h4>Valley View University</h4>
+<button type="submit" title="Hostels around VVU">
+<div class="o"><div class="i">Hostels around VVU
+</div>
+</div>
+</button><br />
+</div>
+
+<div>
+<h3>LOGIN</h4>
+<form action="">
+Username: <input type="text" name="Username" /><br />
+Password:<input type="password" size="20" name="pwd" /><br />
+<input type="submit" value="Submit"/><br /><br />
+</form>
+</div>
+<div id="content" style="background-color:#EEEEEE;height:400px;width:900px;float:right;">
+FLASH IMAGES OF INSTITUTIONS</div>
+
+<div id="footer" style="background-color:#FFA500;clear:both;text-align:bottom;">
+<h5>Contact Us<h5>
+<h5>Copyright © Stairway e-hostels.com</h5>
+
+</div>
+
+
+{% block content %}
+
+{% endblock %}
+
+</div>
+</body>
+</html>
+

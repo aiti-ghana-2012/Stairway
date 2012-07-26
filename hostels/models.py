@@ -77,8 +77,7 @@ class InstitutionAdmin(admin.ModelAdmin):
     list_filter =('institution_name',)
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display=('gender','id_number','phone_number','first_name','last_name',
-    'program_of_study')
+    list_display=('gender','id_number','phone_number','first_name','last_name','program_of_study')
     search_fields =('id_number','last_name','first_name')
     list_filter =('id_number',)
     
@@ -91,14 +90,7 @@ class InstitutionInline(admin.TabularInline):
     model=Institution     
     
 
-<<<<<<< HEAD
-admin.site.register(Hostel)
-admin.site.register(Institution) 
-admin.site.register(Student)
-admin.site.register(Rooms)
-admin.site.register(Reservation)
-admin.site.register(Amenities) 
-=======
+
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)
@@ -106,4 +98,4 @@ admin.site.register(Reservation,ReservationAdmin)
 admin.site.register(Amenities)
 admin.site.register(Rooms) 
 
->>>>>>> 0bb5324c943e8a895b2e4e224d393b2d7f8a393e
+
