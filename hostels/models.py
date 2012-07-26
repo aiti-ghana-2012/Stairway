@@ -11,6 +11,7 @@ class Hostel(models.Model):
       manager = models.ForeignKey(User)
       manager_name = models.TextField()
       hostel_name = models.CharField(max_length = 255)
+      room=models.ForeignKey(Rooms)
       #website = models.URLField()
       def __unicode__(self):
             return self.hostel_name
@@ -79,8 +80,7 @@ class InstitutionAdmin(admin.ModelAdmin):
     list_filter =('institution_name',)
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display=('gender','id_number','phone_number','first_name','last_name',
-    'program_of_study')
+    list_display=('gender','id_number','phone_number','first_name','last_name','program_of_study')
     search_fields =('id_number','last_name','first_name')
     list_filter =('id_number',)
     
@@ -93,14 +93,7 @@ class InstitutionInline(admin.TabularInline):
     model=Institution     
     
 
-<<<<<<< HEAD
-admin.site.register(Hostel)
-admin.site.register(Institution) 
-admin.site.register(Student)
-admin.site.register(Rooms)
-admin.site.register(Reservation)
-admin.site.register(Amenities) 
-=======
+
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)
@@ -108,5 +101,9 @@ admin.site.register(Reservation,ReservationAdmin)
 admin.site.register(Amenities)
 admin.site.register(Rooms) 
 
+<<<<<<< HEAD
 >>>>>>> 0bb5324c943e8a895b2e4e224d393b2d7f8a393e
 >>>>>>> 474d9e8cb47bb0cb36a741528c55ac6ee76b7706
+=======
+
+>>>>>>> c97d1ef9ea01d8b0c0b242ae3e03cf5fcf857a92

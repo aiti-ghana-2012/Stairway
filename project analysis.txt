@@ -1,0 +1,42 @@
+***************************************
+***************************************
+
+what has been done so far in the project
+
+TEMPLATES
+
+frontpage.html
+base.html
+hostels_list.html
+reservationpage.html
+registration.html
+hostels_details.html
+
+** TEMPLATES TO BE DONE INCLUDE  ****
+
+About us
+News and Events
+Hostels terms and conditions
+Rules for payment
+
+########################################
+VIEWS   *** TO BE DONE *****
+
+frontpage
+hostels_list
+hostels_details
+registration
+reservation
+student_login
+manager_login 
+
+
+
+
+
+
+
+
+
+
+
