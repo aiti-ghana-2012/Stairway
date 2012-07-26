@@ -9,6 +9,7 @@ class Hostel(models.Model):
       manager = models.ForeignKey(User)
       manager_name = models.TextField()
       hostel_name = models.CharField(max_length = 255)
+      room=models.ForeignKey(Rooms)
       #website = models.URLField()
       def __unicode__(self):
             return self.hostel_name
