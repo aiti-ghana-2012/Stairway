@@ -15,10 +15,12 @@ def hostels_list(request):
     pass
 
 def hostels_detail(request,id,showparticularhostel):
-    pass
+    return render_to_response('hostels/display_particular_hostel.html', {} )
 
 
 
 
 def home(request):
     return render_to_response('hostels/base.html',{})
+def news(request):
+    return render_to_response('hostels/news.html',{})

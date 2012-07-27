@@ -69,7 +69,11 @@ class Amenities(models.Model):
 
 class HostelAdmin(admin.ModelAdmin):
     list_display=('manager','location')
+
     search_fields =('location',)
+
+    search_fields =('hostel_name','location')
+
     list_filter =('location',)
     #inlines=[InstitutionInline]
 
@@ -89,10 +93,7 @@ class ReservationAdmin(admin.ModelAdmin):
     list_filter=('students',)
 
 class InstitutionInline(admin.TabularInline):
-    model=Institution     
-    
-
-
+      model=Institution     
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)
