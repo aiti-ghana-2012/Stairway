@@ -92,7 +92,7 @@ rel="stylesheet">
            </ul>-->
  <h3>REGISTRATION</h3>
 <body>
-
+<form name="reg">
  <div class="row">
     <div class="span12">
 <div class="well">
@@ -101,7 +101,7 @@ rel="stylesheet">
 <h3>PERSONAL INFORMATION</h3>
 <label for="name">Name:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<input type="text" id="name" name="name"  /></label>
+<input type="text" id="name" name="name"  onblur="check1()"/></label>
 <label for="date of birth">Date of Birth:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input 
 <input type="text" id="date of birth" name="date_of_birth"  onblur="check2()"/></label>
@@ -129,10 +129,14 @@ rel="stylesheet">
 <input type="text" id="program" name="program"  onblur="check10()"/></label>
 <div>Level of Study:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <select><p>
-<option value="100">level 100</option>
-<option value="200">level 200</option>
-<option value="300">level 300</option>
-<option value="300">level 400</option>
+<option value="100">First Year</option>
+<option value="200">Second Year</option>
+<option value="300">Third Year</option>
+<option value="400">Fourth Year</option>
+<option value="500">Fifth Year</option>
+<option value="600">Sixth Year</option>
+<option value="PG">Post Graduate</option>
+
 </p></select></div>
 <label for="email">E-mail:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -156,9 +160,10 @@ rel="stylesheet">
 <input type="file" name="uploadField" />
 </form>
 <input name="checkbox" type="checkbox" value="checkbox" checked> 
-<p>I declare that I have read and understood the <a href="Stairway/terms and conditions.doc">rules and terms</a> </p>            
+<p>I declare that I have read and understood the <a href="terms_conditions.html">rules and terms</a> </p>            
 <div align="right"><button class="btn btn-primary" type="submit" a href="confirmation_page">Submit</a></button></div></form>
   </div></li> 
+<div class="josh3" align=left><a href="reservation.html">Back</a></div>
 </body>
 </html>
 
