@@ -22,3 +22,8 @@ def hostels_detail(request,id,showparticularhostel):
 
 def home(request):
     return render_to_response('hostels/base.html',{})
+def hostel_manager(request):
+    student_list = Student.objects.all()
+    return render_to_response('hostels/hostel_manager_page.html', {'student_list':student_list})
+def hostel_student(request):
+    return render_to_response('hostels/particularstudent.html',{})
