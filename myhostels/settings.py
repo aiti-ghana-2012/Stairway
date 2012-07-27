@@ -1,11 +1,9 @@
 # Django settings for myhostels project.
 import os
 SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
-
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-import os
-SITE_ROOT = os.path.realpath(os.path.dirname(__file__))
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -75,7 +73,8 @@ STATIC_ROOT = 'static/'
 STATIC_URL = '/static/'
 
 # Additional locations of static files
-STATICFILES_DIRS = (os.path.join(SITE_ROOT, 'images'),
+STATICFILES_DIRS = (
+    os.path.join(SITE_ROOT,'assets'),
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -115,8 +114,7 @@ ROOT_URLCONF = 'myhostels.urls'
 WSGI_APPLICATION = 'myhostels.wsgi.application'
 
 TEMPLATE_DIRS = (
-     os.path.join(SITE_ROOT,’templates’),
-
+    os.path.join(SITE_ROOT,'templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
