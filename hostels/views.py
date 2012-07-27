@@ -1,7 +1,5 @@
 # Create your views here.
-<<<<<<< HEAD
 
-=======
 from django.forms import ModelForm
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
@@ -31,4 +29,4 @@ def studconfirm(request,id,hostelinfo):
     return render_to_response('hostels/student_confirmation.html',{})
 def home(request):
     return render_to_response('hostels/base.html',{})
->>>>>>> a45fa1a56f55de7c76bc8f3c39466ddc6151c04e
+

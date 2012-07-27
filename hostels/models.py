@@ -38,7 +38,6 @@ class Student(models.Model):
       LEVEL_IN_SCHOOL_CHOICES= (('100','100'), ('200','200'), ('300','300'), ('400','400'))
       level = models.CharField(max_length = 4, choices = LEVEL_IN_SCHOOL_CHOICES)
       picture = models.ImageField(upload_to = 'images/uploads/')
-    post=models.ForeignKey(Rooms,related_name='studentsss')
       def __unicode__(self):
             return str(self.id_number)
 
