@@ -1,84 +1,112 @@
 <!-- parent template  -->
-<!DOCTYPE html>  <!-- this is just a declaration which tells the browser the version of html being used   -->
-<html>
-<head>
 
-<title>frontpage </title>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Stairway Base</title>
+<link href="/static/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/css/docs.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/js/google-code-prettify-prettify.css" rel="stylesheet">
+<style>#first-row {text-align:left}
+.center {text-align:center}
+#Search-second {text-align:right}
+.row {border:2px}</style>
+<script>
+$('.carousel').carousel()
+</script>
 </head>
-<body style="background-color:snow" leftmargin="70px" topmargin="70px" marginwidth="55px" marginheight="65px">
-<div id="container" style="width:500px" >
+
+<body>
+<div class="container">
+
+<!-- Masthead
+=============================================== -->
+  <header class="jumbotron subhead" >
+  <div class="row" id = "first-row">
+    <div class="span12">
+      <h1 class="prettyprint linenums">Stairway e-Hostels</h1>
+      <br>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <div class="span6">
+      <p class="lead">The online resource for student hostels</p>
+    </div>
+    <div class="span6" id="Search-second">
+      <input type="text"/>
+      Search
+    </div>
+  </div>
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li><a href="#about-us">About Us</a></li>
+      <li><a href="#news">News and Events</a></li>
+      <li><a href="#room-res">Room Reservation</a></li>
+      <li><a href="#galery">Photo Gallery</a></li>
+    </ul>
+  </div>
+
+<header>
+<hr />
 
 
-<div id="header" style="background-color:#FFA500;">
-<h1 style="margin-bottom:0;">Stairway e-Hostels</h1>
-<h5 align="left"><i>The online resource for students </i></h5></div>
+<!-- Middle
+=============================================== -->
 
-<table align="right" width="150" border="0" cellspacing="0" cellpadding="0">
-<tr>
-<td colspan="2">Search</td>
-</tr>
-<tr>
-<td> <input type="text" name="Query" size="15"/></td>
-<td><input type="button" name="Search" value="GO!!"></td>
-</tr>
-</table>
-</div>
-
-<div>
-<h4 align="left">About Us</h4>
-<h4 align="middle">News and Events</h4>
-<h4 align="center">Room Reservation</h4>
-<h4 align="right">Photo Gallery </h4>
-</div>
-
-<div id="menu" style="background-color:#808000;height:200px;width:100px;float:left;">
-<b>INSTITUTIONS</b><br/>
-
-<h4>KNUST</h4><br />
-<button type="submit" title="Hostels around KNUST">
-<div class="o"><div class="i">Hostels around KNUST
-</div>
-</div>
-</button><br />
-
-<h4>University of Ghana</h4>
-<button type="submit" title="Hostels around UG">
-<div class="o"><div class="i">Hostels around UG
-</div>
-</div>
-</button><br />
-
-<h4>Valley View University</h4>
-<button type="submit" title="Hostels around VVU">
-<div class="o"><div class="i">Hostels around VVU
-</div>
-</div>
-</button><br />
-</div>
-
-<div>
-<h3>LOGIN</h4>
-<form action="">
-Username: <input type="text" name="Username" /><br />
-Password:<input type="password" size="20" name="pwd" /><br />
-<input type="submit" value="Submit"/><br /><br />
-</form>
-</div>
-<div id="content" style="background-color:#EEEEEE;height:400px;width:900px;float:right;">
-FLASH IMAGES OF INSTITUTIONS</div>
-
-<div id="footer" style="background-color:#FFA500;clear:both;text-align:bottom;">
-<h5>Contact Us<h5>
-<h5>Copyright © Stairway e-hostels.com</h5>
-
-</div>
 
 
 {% block content %}
 
 {% endblock %}
 
+<!-- Footer
+=============================================== -->
+<footer class="footer">
+<div class="row">
+  <div class="span4">
+    <p><a href="#ContactUs">Contact Us</a></p>
+    {% block footeradd1 %}
+    {% endblock %}
+  </div>
+  <div class="span4">
+    <p ><a href="#Location">Location</a></p>
+    {% block footeradd2 %}
+    {% endblock %}
+  </div>
+  <div class="span4">
+    <p><a href="#Register">Register with Us</a></p>
+  </div>
 </div>
+    <br/>
+    <p class="center">Copyright 2012, stairway e-hostels</p>
+
+</footer>
+</div>
+
+ <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/jquery.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/google-code-prettify/prettify.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-transition.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-alert.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-modal.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-dropdown.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-scrollspy.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-tab.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-tooltip.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-popover.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-button.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-collapse.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-carousel.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/bootstrap-typeahead.js"></script>
+    <script src="/static/bootstrap/docs/assets/js/application.js"></script>
+
+
+
+
 </body>
 </html>
 

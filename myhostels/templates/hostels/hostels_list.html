@@ -4,7 +4,6 @@
 {% block content %}
 
 
-
 <!-- Middle
 =============================================== -->
   <div class="row">
@@ -17,25 +16,32 @@
               <li><a href="#">Valley View University</a></li>
            </ul>-->
 
-           <h3>Institutions</h3>
+           <h3>Hostels Around KNUST</h3>
            <div class="well">
              <ul class="nav nav-list">
-              <li class="nav-header">Knust</li>
-              <li><a href="/hostels/hostels_list.html">Hostels around Knust</a></li>
+              <li class="nav-header">Westend Hostels</li>
+              <li><a href="#">Description of Westend Hostels</a></li>
            </ul>
 
            </div>
            <div class="well">
              <ul class="nav nav-list">
-              <li class="nav-header">University of Ghana, Legon</li>
-              <li><a href="#">Hostels around UG</a></li>
+              <li class="nav-header">Brunei Hostels</li>
+              <li><a href="#">Description of Brunei Hostels</a></li>
            </ul>
 
            </div>
            <div class="well">
              <ul class="nav nav-list">
-              <li class="nav-header">Valley View University</li>
-              <li><a href="#">Hostels around VVU</a></li>
+              <li class="nav-header">Frontline Hostels</li>
+              <li><a href="#">Description of Frontline Hostels</a></li>
+           </ul>
+
+           </div>
+           <div class="well">
+             <ul class="nav nav-list">
+              <li class="nav-header">Splendor Hostels</li>
+              <li><a href="#">Description of Splendor Hostels</a></li>
            </ul>
 
            </div>
@@ -46,21 +52,21 @@
           <div id="myCarousel" class="carousel slide">
             <div class="carousel-inner">
               <div class="item active">
-                <img src="/static/bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-01.jpg" alt="">
+                <img src="bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-01.jpg" alt="">
                 <div class="carousel-caption">
                   <h4>First Thumbnail label</h4>
                   <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 </div>
               </div>
               <div class="item">
-                <img src="/static/bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-02.jpg" alt="">
+                <img src="bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-02.jpg" alt="">
                 <div class="carousel-caption">
                   <h4>Second Thumbnail label</h4>
                   <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                 </div>
               </div>
               <div class="item">
-                <img src="/static/bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-03.jpg" alt="">
+                <img src="bootstrap/docs/assets/img/bootstrap-mdo-sfmoma-03.jpg" alt="">
                 <div class="carousel-caption">
                   <h4>Third Thumbnail label</h4>
                   <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -76,30 +82,26 @@
   <hr/>
 <!-- Bottom
 =============================================== -->
-<div class="row">
-  <div class="span4">
-    <div class="login-form">
-                  <h2>Login</h2>
-                  <form action="">
-                      <fieldset>
-                          <div class="clearfix">
-                              <input type="text" placeholder="Username">
-                          </div>
-                          <div class="clearfix">
-                              <input type="password" placeholder="Password">
-                          </div>
-                          <button class="btn btn-primary" type="submit">Sign in</button>
-                      </fieldset>
-                  </form>
-              </div>
-  </div>
-  <div class="span8">
+
+  <div class="span12">
     <div class="page-header">
-      <h2 class="center">Akwaaba</h2>
-      <p>Where stairs are open on one or both sides, the first step above the lower floor may be wider than the other steps and rounded. The balusters typically form a semicircle around the circumference of the rounded portion and the handrail has a horizontal spiral called a "volute" that supports the top of the balusters. Besides the cosmetic appeal, starting steps allow the balusters to form a wider, more stable base for the end of the handrail. Handrails that simply end at a post at the foot of the stairs can be less sturdy, even with a thick post. A double bullnose can be used when both sides of the stairs are open.</p>
+      <h2 class="center">Brief Description of Distance of Different hostels from KNUST</h2>
+      <p> Welcome to all the different hostels around KNUST. Specifically, Westend Hostels is 20km away from KNUST campus.
+          Brunei Hostel is 10km away from KNUST campus. Splendor Hostels is 5.9km away from KNUST and Frontline Hostels is
+          located on campus.</p>
     </div>
   </div>
-</div>
+{% endblock %}
+<!-- Additional information on base Footer
+=============================================== -->
+ 
+   {%block footeradd1%}
+    <p><a href="#">Hostel Terms and Conditions</a></p>
+   {% endblock %}
+ 
+   {%block footeradd2 %}
+    <p><a href="#">Rules for payment</a></p>
+   {%endblock %}
 
 
-{% endblock %} 
+
