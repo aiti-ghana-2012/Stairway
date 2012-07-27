@@ -14,11 +14,9 @@ def frontpage(request):
 def hostels_list(request):
     return render_to_response('hostels/hostels_list.html',{})
 
-def AMENhostels_detail(request,id,hostelinfo):
-    return render_to_response('hostels/AMENhostels_detail.html',{})
 
 
-def BRUNEIhostels_detail(request,id,hostelinfo):
+def hostels_detail(request,id,hostelinfo):
     return render_to_response('hostels/BRUNEIhostels_detail.html',{})
 
 def studregister(request,id,hostelinfo):
