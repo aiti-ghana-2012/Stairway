@@ -25,7 +25,7 @@ class Institution(models.Model):
             return self.institution_name
 
 class Student(models.Model):
-      GENDER_CHOICES = (('M','Male'),('F','Female'),)
+      GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
       gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
       user = models.ForeignKey(User, unique=True)
@@ -93,7 +93,10 @@ class ReservationAdmin(admin.ModelAdmin):
     list_filter=('students',)
 
 class InstitutionInline(admin.TabularInline):
-      model=Institution     
+    model=Institution     
+    
+
+
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)

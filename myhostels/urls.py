@@ -1,3 +1,4 @@
+
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 # Uncomment the next two lines to enable the admin:
@@ -39,7 +40,13 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
+
+<<<<<<< HEAD
+
+=======
     url(r'^hostels/', include('hostels.urls')),
-
-
+    url(r'^studentapp/', include('studentapp.urls')),
+    url(r'^managerapp/', include('managerapp.urls')),
+>>>>>>> 64dd8cc1e2255fc21668d27891606af6db8a0e49
 )
+

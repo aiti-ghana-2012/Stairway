@@ -114,6 +114,12 @@ ROOT_URLCONF = 'myhostels.urls'
 WSGI_APPLICATION = 'myhostels.wsgi.application'
 
 TEMPLATE_DIRS = (
+<<<<<<< HEAD
+     os.path.join(SITE_ROOT,’templates’),
+
+=======
+    os.path.join(SITE_ROOT,'templates'),
+>>>>>>> a45fa1a56f55de7c76bc8f3c39466ddc6151c04e
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
