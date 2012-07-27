@@ -1,0 +1,46 @@
+<!-- this is a child template of the base html -->
+
+{% extends "hostels/base.html" %}
+{% block content %}
+
+<div class="row">
+  <div class="span12">
+    <div class="student-confirmation-form">
+                  <h2>Please Confirm Your Registration</h2>
+                  <form action="">
+                      <fieldset>
+                          <div class="clearfix">
+                              <input type="text" placeholder="Username">
+                          </div>
+                          <div class="clearfix">
+                              <input type="password" placeholder="Password">
+                          </div>
+                          <button class="btn btn-primary" type="submit">Sign in</button>
+                      </fieldset>
+                  </form>
+              </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="span8">
+    <div class="Confirmation-button-form">
+                  <button type="submit" class="btn" style="color:#8B0000;height:60px;width:150px "><h3><b>SUBMIT TO CONFIRM REGISTATION</b></h3></button>
+
+              </div>
+  </div>
+
+<div class="row">
+  <div class="span4">
+    <div class="Registration button-form">
+                  <p>Thank You For Registrating with Stairway e-hostels</p>
+
+              </div>
+  </div>
+</div>
+
+
+
+
+{% endblock %}
