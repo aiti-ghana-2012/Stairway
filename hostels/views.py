@@ -15,14 +15,20 @@ def frontpage(request):
     return render_to_response('hostels/frontpage.html',{})
 
 def hostels_list(request):
-    pass
+    return render_to_response('hostels/hostels_list.html',{})
 
-def hostels_detail(request,id,showparticularhostel):
-    return render_to_response('hostels/display_particular_hostel.html', {} )
-
-
+def AMENhostels_detail(request,id,hostelinfo):
+    return render_to_response('hostels/AMENhostels_detail.html',{})
 
 
+def BRUNEIhostels_detail(request,id,hostelinfo):
+    return render_to_response('hostels/BRUNEIhostels_detail.html',{})
+
+def studregister(request,id,hostelinfo):
+    return render_to_response('hostels/student_registration.html',{})
+
+def studconfirm(request,id,hostelinfo):
+    return render_to_response('hostels/student_confirmation.html',{})
 def home(request):
     return render_to_response('hostels/base.html',{})
 >>>>>>> a45fa1a56f55de7c76bc8f3c39466ddc6151c04e

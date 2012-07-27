@@ -2,6 +2,79 @@
 {% block content %}
 <!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
 <html> <head>
+<script language="javascript">
+function check1()
+{
+if(document.reg.name.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check2()
+{
+if(document.reg.date_of_birth.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check3()
+{
+if(document.reg.studentid.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check4()
+{
+if(document.reg.email.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check5()
+{
+if(document.reg.contact_number.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check6()
+{
+if(document.reg.new_username.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check7()
+{
+if(document.reg.confirm_username.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check8()
+{
+if(document.reg.password.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check9()
+{
+if(document.reg.password2.value=="")
+{
+alert("Field can't be empty");
+}
+}
+function check10()
+{
+if(document.reg.program.value=="")
+{
+alert("Field can't be empty");
+}
+}
+
+</script>
 <title>Registration</title>
 <link href="bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
 <link href="bootstrap/docs/assets/css/bootstrap-responsive.css"
@@ -18,7 +91,8 @@ rel="stylesheet">
               <li><a href="#">Valley View University</a></li>
            </ul>-->
  <h3>REGISTRATION</h3>
-<form>
+<body>
+<form name="reg">
  <div class="row">
     <div class="span12">
 <div class="well">
@@ -30,7 +104,7 @@ rel="stylesheet">
 <input type="text" id="name" name="name"  /></label>
 <label for="date of birth">Date of Birth:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input 
- <input type="text" id="date of birth" name="date of birth"  /></label>
+<input type="text" id="date of birth" name="date_of_birth"  onblur="check2()"/></label>
 <label for="sex">Sex:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="sex" value="male" /> Male
@@ -48,10 +122,11 @@ rel="stylesheet">
 </div>
 <label for="studentid">Student ID:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="text" id="studentid" name="studentid"  /></label>
+
+<input type="text" id="studentid" name="studentid"  onblur="check3()"/></label>
 <label for="program">Programme of Study:
 &nbsp; &nbsp;&nbsp;
-<input type="text" id="program" name="program"  /></label>
+<input type="text" id="program" name="program"  onblur="check10()"/></label>
 <div>Level of Study:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <select><p>
 <option value="100">level 100</option>
@@ -61,26 +136,30 @@ rel="stylesheet">
 </p></select></div>
 <label for="email">E-mail:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="text" name="email"></label>                
+
+<input type="text" name="email" onblur="check4()"></label>                
 <label for="contact number">Contact number:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 
- <input type="text" id="contact number" name="contact number"  /></label>
+ <input type="text" id="contact_number" name="contact_number" onblur="check5()"/></label>
 <label for="new username"> New Username:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
-<input type="text" id="new username" name="new username"  /></label>
+<input type="text" id="new username" name="new_username"  onblur="check6()"/></label>
 <label for="confirm username"> Confirm Username:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<input type="text" id="confirm username" name="confirm username"  /></label>
+<input type="text" id="confirm username" name="confirm_username"  onblur="check7()"/></label>
  <label for="password">Password:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  
-<input type="password" name="password" ></label>                
-<label for="password2">Retype Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password2" ></label>
+<input type="password" name="password" onblur="check8()"></label>                
+<label for="password2">Retype Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password2" onblur="check9()"></label>
  upload photo:
 <form name="myWebForm" action="" method="post" >
 <input type="file" name="uploadField" />
 </form>              
-<div align="right"><button class="btn btn-primary" type="submit" a href="confirmation_page" >Submit</a></button></div></form>
+<div align="right"><button class="btn btn-primary" type="submit" a href="confirmation_page">Submit</a></button></div></form>
   </div></li> 
+</body>
+</html>
+
 
 
          
