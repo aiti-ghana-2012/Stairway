@@ -18,6 +18,8 @@ About us
 News and Events
 Hostels terms and conditions
 Rules for payment
+confirmationpage
+hostel managerpage
 
 ########################################
 VIEWS   *** TO BE DONE *****

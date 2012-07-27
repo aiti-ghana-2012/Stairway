@@ -88,7 +88,10 @@ class ReservationAdmin(admin.ModelAdmin):
     list_filter=('students',)
 
 class InstitutionInline(admin.TabularInline):
-      model=Institution     
+    model=Institution     
+    
+
+
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)

@@ -1,6 +1,4 @@
-"""
-This code should be copy and pasted into blog/urls.py
-"""
+
 from django.conf.urls.defaults import *
 
 urlpatterns = patterns('',
@@ -10,6 +8,9 @@ urlpatterns = patterns('',
     url(r'^homepage/displayhostels/(?P<id>\d+)/((?P<showparticularhostel>.*)/)?$','hostels.views.hostels_detail'),
     url(r'^homepage/managerpage/$', 'hostels.views.hostel_manager'),
     url(r'^homepage/managerpage/student/$','hostels.views.hostel_student'),
+    url(r'^homepage/displayhostels/(?P<id>\d+)/((?P<hostelinfo>.*)/)?//$','hostels.views.hostels_detail'),
+    url(r'^homepage/displayhostels/(?P<id>\d+)/((?P<hostelinfo>.*)/)?/studreg/$','hostels.views.studregister'),
+    url(r'^homepage/displayhostels/(?P<id>\d+)/((?P<hostelinfo>.*)/)?/studreg/studcon$','hostels.views.studconfirm'),
+
     
 )
-
