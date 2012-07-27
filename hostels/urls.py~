@@ -1,0 +1,13 @@
+from django.conf.urls.defaults import *
+
+urlpatterns = patterns('',
+    url(r'^$', 'hostels.views.home'),
+    #url(r'^posts/$', 'hostels.views.post_list'),
+    url(r'^hostels/(?P<id>\d+)/((?P<showComments>.*)/)?$', 'hostels.views.post_detail'),
+    ## add your url here
+   #use this url or the next one..they are the same explanation.....
+   # url(r'^posts/search/(\w+)$', 'blog.views.post_search'), 
+    url(r'^hostels/search/(?P<term>\w+)$','hostels.views.post_search'),
+    #url(r'^comments/(?P<id>\d+)/edit/$','blog.views.edit_comment'),
+)
+

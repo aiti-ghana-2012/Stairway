@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>STUDENT REGISTRATION PAGE</title>
+</head>
+<body>
+<h3 align="center"> Stairway e-Hostels</h3>
+<h4>About us
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;      News & Events
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+Login</h4>
+<h5>PERSONAL INFORMATION</h5>
+<h7>Name:</h7>
+<p>School:</p>
+<h7>Student id:</h7>
+<h7>Programme Of Study:</h7>
+<h7>Date Of Birth:</h7>
+<h7>Level Of Study:</h7>
+<h7>Email address:</h7>
+<h7>Contact number:</h7>
+<h7>New Username:</h7>
+<h7>Confirm Username:</h7>
+<h7>New Password:</h7>
+<h7>Confirm Password:</h7>
+
+</body>
+</html>

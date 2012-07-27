@@ -92,7 +92,7 @@ rel="stylesheet">
            </ul>-->
  <h3>REGISTRATION</h3>
 <body>
-<form name="reg">
+
  <div class="row">
     <div class="span12">
 <div class="well">
@@ -101,10 +101,10 @@ rel="stylesheet">
 <h3>PERSONAL INFORMATION</h3>
 <label for="name">Name:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-<input type="text" id="name" name="name"  onblur="check1()"/></label>
+<input type="text" id="name" name="name"  /></label>
 <label for="date of birth">Date of Birth:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input 
- <input type="text" id="date of birth" name="date_of_birth"  onblur="check2()"/></label>
+<input type="text" id="date of birth" name="date_of_birth"  onblur="check2()"/></label>
 <label for="sex">Sex:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="radio" name="sex" value="male" /> Male
@@ -122,6 +122,7 @@ rel="stylesheet">
 </div>
 <label for="studentid">Student ID:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <input type="text" id="studentid" name="studentid"  onblur="check3()"/></label>
 <label for="program">Programme of Study:
 &nbsp; &nbsp;&nbsp;
@@ -135,6 +136,7 @@ rel="stylesheet">
 </p></select></div>
 <label for="email">E-mail:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
 <input type="text" name="email" onblur="check4()"></label>                
 <label for="contact number">Contact number:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 
@@ -152,11 +154,14 @@ rel="stylesheet">
  upload photo:
 <form name="myWebForm" action="" method="post" >
 <input type="file" name="uploadField" />
-</form>              
+</form>
+<input name="checkbox" type="checkbox" value="checkbox" checked> 
+<p>I declare that I have read and understood the <a href="Stairway/terms and conditions.doc">rules and terms</a> </p>            
 <div align="right"><button class="btn btn-primary" type="submit" a href="confirmation_page">Submit</a></button></div></form>
   </div></li> 
 </body>
 </html>
+
 
 
          
