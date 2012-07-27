@@ -5,65 +5,66 @@ from django.contrib.auth.models import User
 # Create your models here.
 
 class Hostel(models.Model):
-      location = models.TextField()
+      location = models.CharField(max_length = 255)
       manager = models.ForeignKey(User)
-      hostel_name = models.CharField(max_length=30)
-      website = models.URLField()
+      manager_name = models.TextField()
+      hostel_name = models.CharField(max_length = 255)
+      #website = models.URLField()
       def __unicode__(self):
-        return self.hostel_name
+            return self.hostel_name
 
 class Institution(models.Model):
-      institution_name = models.CharField(max_length=60)
-      hostels = models.ManyToManyField(Hostel)
-      city = models.CharField(max_length=60)
+      institution_name = models.CharField(max_length = 255)
+      hostels = models.ForeignKey(Hostel)
+      #city = models.CharField(max_length=60)
       location = models.TextField()
-      website = models.URLField()
+      #website = models.URLField()
       def __unicode__(self):
-       return self.institution_name
+            return self.institution_name
 
 class Student(models.Model):
       GENDER_CHOICES = (('M','Male'),('F','Female'),)
       gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
-      id_number = models.CharField(max_length=60)
+      id_number = models.IntegerField()
       user = models.ForeignKey(User, unique=True)
-      phone_number = models.CharField(max_length=10)
-      first_name = models.CharField(max_length=40)
-      last_name = models.CharField(max_length=40)
+      phone_number = models.IntegerField(max_length=10)
+      first_name = models.CharField(max_length = 255)
+      last_name = models.CharField(max_length = 255)
       school = models.ForeignKey(Institution)
-      program_of_study = models.CharField(max_length=60)
+      program_of_study = models.CharField(max_length = 255)
       email = models.EmailField()
-      hostels = models.ManyToManyField(Hostel)
-      address = models.TextField(max_length=50)
-      LEVEL_IN_SCHOOL_CHOICES = (('100','Freshman'),('200','continuing'),('300','continuing'),('400','continuing'),('600','graduate'),)
-      level = models.IntegerField(max_length=1,choices=LEVEL_IN_SCHOOL_CHOICES)
-      post=models.ForeignKey(Rooms,related_name='occupy')
+      hostels = models.ForeignKey(Hostel)
+      LEVEL_IN_SCHOOL_CHOICES= (('100','100'), ('200','200'), ('300','300'), ('400','400'))
+      level = models.CharField(max_length = 4, choices = LEVEL_IN_SCHOOL_CHOICES)
+      picture = models.ImageField(upload_to = 'images/uploads/')
+    post=models.ForeignKey(Rooms,related_name='studentsss')
       def __unicode__(self):
-       return self.id_number
+            return str(self.id_number)
 
 class Rooms(models.Model):
       room_number = models.IntegerField()
       occupancy = models.IntegerField()
       space_available = models.IntegerField()
-      hostels = models.ManyToManyField(Hostel)
+      hostel= models.ManyToManyField(Hostel)
       fee = models.DecimalField(max_digits=20, decimal_places=2)
       def __unicode__(self):
-       return self.fee
+            return self.fee
 
 class Reservation(models.Model):
       students = models.ManyToManyField(Student)
-      hostel_name = models.ForeignKey(Hostel)
+      hostels = models.ForeignKey(Hostel)
       occupancy = models.IntegerField()
       status = models.CharField(max_length=60)
       date_of_registration = models.DateField(auto_now_add=True)
       def __unicode__(self):
-       return self.status
+            return self.status
 
 class Amenities(models.Model):
-      name_of_amenities = models.CharField(max_length=60)
-      status_of_amenities = models.CharField(max_length=60)
+      name_of_amenities = models.CharField(max_length = 255)
       room = models.ManyToManyField(Rooms)
       def __unicode__(self):
-       return self.name_of_amenities
+            return self.name_of_amenities
+
 
 class HostelAdmin(admin.ModelAdmin):
     list_display=('manager','website','location')
@@ -91,6 +92,14 @@ class InstitutionInline(admin.TabularInline):
     model=Institution     
     
 
+<<<<<<< HEAD
+admin.site.register(Hostel)
+admin.site.register(Institution) 
+admin.site.register(Student)
+admin.site.register(Rooms)
+admin.site.register(Reservation)
+admin.site.register(Amenities) 
+=======
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)
@@ -98,3 +107,4 @@ admin.site.register(Reservation,ReservationAdmin)
 admin.site.register(Amenities)
 admin.site.register(Rooms) 
 
+>>>>>>> 0bb5324c943e8a895b2e4e224d393b2d7f8a393e

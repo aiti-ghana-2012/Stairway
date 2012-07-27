@@ -1,0 +1,91 @@
+{% extends "hostels/base.html" %}
+{% block content %}
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Registration</title>
+<link href="bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+<link href="bootstrap/docs/assets/css/bootstrap-responsive.css"
+rel="stylesheet">
+<link href="bootstrap/docs/assets/css/docs.css" rel="stylesheet">
+<link href="bootstrap/docs/assets/js/google-code-prettify-prettify.css" rel="stylesheet">
+ <div class="row">
+    <div class="span6">
+     <!-- <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Institutions</li>
+              <li class="active"><a href="#">Knust</a></li>
+              <li><a href="#">University of Ghana, Legon</a></li>
+              <li><a href="#">Valley View University</a></li>
+           </ul>-->
+ <h3>REGISTRATION</h3>
+<form>
+ <div class="row">
+    <div class="span12">
+<div class="well">
+             <ul class="nav nav-list">
+              <li class="nav-header">
+<h3>PERSONAL INFORMATION</h3>
+<label for="name">Name:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<input type="text" id="name" name="name"  /></label>
+<label for="date of birth">Date of Birth:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input 
+ <input type="text" id="date of birth" name="date of birth"  /></label>
+<label for="sex">Sex:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="radio" name="sex" value="male" /> Male
+<input type="radio" name="sex" value="female" /> Female
+ <br/></label>
+<div>School:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+<select><p>
+<option value="university of ghana">University Of Ghana</option>
+<option value="knust">KNUST</option>
+<option value="university of capecoast">University Of Capecoast</option>
+<option value="university of development studies">University Of Development Studies</option>
+</p></select>
+</div>
+<label for="studentid">Student ID:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" id="studentid" name="studentid"  /></label>
+<label for="program">Programme of Study:
+&nbsp; &nbsp;&nbsp;
+<input type="text" id="program" name="program"  /></label>
+<div>Level of Study:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<select><p>
+<option value="100">level 100</option>
+<option value="200">level 200</option>
+<option value="300">level 300</option>
+<option value="300">level 400</option>
+</p></select></div>
+<label for="email">E-mail:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" name="email"></label>                
+<label for="contact number">Contact number:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;                 
+ <input type="text" id="contact number" name="contact number"  /></label>
+<label for="new username"> New Username:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" id="new username" name="new username"  /></label>
+<label for="confirm username"> Confirm Username:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text" id="confirm username" name="confirm username"  /></label>
+ <label for="password">Password:
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;  
+<input type="password" name="password" ></label>                
+<label for="password2">Retype Password:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password2" ></label>
+ upload photo:
+<form name="myWebForm" action="" method="post" >
+<input type="file" name="uploadField" />
+</form>              
+<div align="right"><button class="btn btn-primary" type="submit" a href="confirmation_page" >Submit</a></button></div></form>
+  </div></li> 
+
+
+         
+    
+           
+
+ 
+             
