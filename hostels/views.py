@@ -17,12 +17,15 @@ def hostels_list(request):
 
 
 def hostels_detail(request,id,hostelinfo):
-    return render_to_response('hostels/BRUNEIhostels_detail.html',{})
+    return render_to_response('hostels/hostels_detail.html',{})
+
 
 def studregister(request,id,hostelinfo):
     return render_to_response('hostels/student_registration.html',{})
 
+
 def studconfirm(request,id,hostelinfo):
     return render_to_response('hostels/student_confirmation.html',{})
+
 def home(request):
     return render_to_response('hostels/base.html',{})
