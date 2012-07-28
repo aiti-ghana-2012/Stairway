@@ -10,13 +10,33 @@ from models import Hostel,Institution,Student,Rooms,Reservation,Amenities
 from django.shortcuts import render_to_response
 
 def frontpage(request):
-    return render_to_response('hostels/frontpage.html',{})
+    Inst= Institution.objects.all()
+    
+    my_context = Context({'allinstitutions':Inst})   
+    return render_to_response ('hostels/frontpage.html', my_context)
+    
+def hostels_list(request,id):
+    bla = Hostel.objects.filter(institution=id)
+    institute = Institution.objects.get(id=id)
+    my_context = Context({'allhostels':bla,'institution':institute})   
+    return render_to_response ('hostels/hostels_list.html', my_context)
 
-def hostels_list(request):
-    return render_to_response('hostels/hostels_list.html',{})
 
+<<<<<<< HEAD
 def hostels_detail(request,showparticularhostel):
     return render_to_response('hostels/hostels_detail.html',{})
+=======
+
+
+def hostels_detail(request,id):
+    p = Hostel.objects.filter(hostel_name=id)
+    q = Hostel.objects.get(id=id) 
+    
+    return render_to_response('hostels/hostels_detail.html', my_context)
+    pass 
+
+   
+>>>>>>> b8513d67b0019e1ded237ab18b623d73d5a9f203
 
 def home(request):
     return render_to_response('hostels/base.html',{})
@@ -31,7 +51,19 @@ def studregister(request,id,hostelinfo):
 def studconfirm(request):
     return render_to_response('hostels/student_confirmation.html',{})
 
+<<<<<<< HEAD
 @csrf_exempt
+=======
+def home(request):
+    return render_to_response('hostels/base.html',{})
+
+def news(request):
+    return render_to_response('hostels/news.html',{})
+def reserv(request):
+    return render_to_response('hostels/reservation.html',{})
+
+
+>>>>>>> b8513d67b0019e1ded237ab18b623d73d5a9f203
 def hostel_manager(request):
     current_user = request.user
     if Student.objects.filter(user = current_user).count() is 1:
@@ -48,6 +80,7 @@ def hostel_manager(request):
         
 """@csrf_exempt
 def hostel_student(request):
+<<<<<<< HEAD
     current_user = request.user
     request.POST
     
@@ -64,4 +97,7 @@ def hostel_student(request):
     hostel_list = Hostel.objects.get(id = user_id)
     
     return render_to_response('hostels/particularstudent.html',{"hostel_list":thishostel, 'everystudent':thisstudent})"""
+=======
+    return render_to_response('hostels/particularstudent.html',{})
+>>>>>>> b8513d67b0019e1ded237ab18b623d73d5a9f203
 

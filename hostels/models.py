@@ -1,10 +1,20 @@
+
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
 
 # Create your models here.
+class Institution(models.Model):
+      institution_name = models.CharField(max_length = 255)
+      location = models.TextField()
+      def __unicode__(self):
+            return self.institution_name
+      
+      def get_absolute_url(self):
+       return "/hostels/homepage/%i/displayhostels" % self.id
 
 class Hostel(models.Model):
+<<<<<<< HEAD
       location = models.CharField(max_length = 255)
       manager = models.OneToOneField(User)
       manager_name = models.TextField()
@@ -15,22 +25,30 @@ class Hostel(models.Model):
       #website = models.URLField()
       def __unicode__(self):
             return str(self.hostel_name)
-
-class Institution(models.Model):
-      institution_name = models.CharField(max_length = 255)
-      hostels = models.ForeignKey(Hostel)
-      #city = models.CharField(max_length=60)
-      location = models.TextField()
-      #website = models.URLField()
+=======
+      hostel_name = models.CharField(max_length = 255)
+      hostel_description = models.TextField()
+      manager = models.ForeignKey(User)  #the manager here is the database user
+      hostel_manager_name = models.CharField(max_length= 255)
+      institution = models.ForeignKey(Institution)
       def __unicode__(self):
-            return self.institution_name
+            return self.hostel_name
+      def get_absolute_url(self):
+       return "/hostels/homepage/displayhostels/%i" % self.id
+
+>>>>>>> b8513d67b0019e1ded237ab18b623d73d5a9f203
+
 
 class Student(models.Model):
       GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
       gender = models.CharField(max_length=10,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
+<<<<<<< HEAD
       user = models.OneToOneField(User, unique=True)
       phone_number = models.IntegerField(max_length=10)
+=======
+      phone_number = models.CharField(max_length = 10)
+>>>>>>> b8513d67b0019e1ded237ab18b623d73d5a9f203
       first_name = models.CharField(max_length = 255)
       last_name = models.CharField(max_length = 255)
       school = models.ForeignKey(Institution)
@@ -44,19 +62,21 @@ class Student(models.Model):
             return str(self.id_number)
 
 class Rooms(models.Model):
-      room_number = models.IntegerField()
-      occupancy = models.IntegerField()
+      room_number = models.CharField(max_length=60)
+      OCCUPANCY_CHOICES =(('1 in a room','1 in a room'),('2 in a room','2 in a room'),('4 in a room','4 in a room'))
+      occupancy = models.CharField(max_length=100,choices=OCCUPANCY_CHOICES)
       space_available = models.IntegerField()
       hostel= models.ManyToManyField(Hostel)
       fee = models.DecimalField(max_digits=20, decimal_places=2)
       def __unicode__(self):
-            return self.fee
+            return str(self.occupancy)
 
 class Reservation(models.Model):
       students = models.OneToOneField(Student)
       hostels = models.ForeignKey(Hostel)
-      occupancy = models.IntegerField()
-      status = models.CharField(max_length=60)
+      occupancy = models.ForeignKey(Rooms)
+      STATUS_CHOICES =(('reserved','reserved'),('not_reserved','not_reserved'))
+      status = models.CharField(max_length=60,choices=STATUS_CHOICES)
       date_of_registration = models.DateField(auto_now_add=True)
       room_num = models.IntegerField()
       reciept = models.CharField(max_length = 255)
@@ -70,9 +90,11 @@ class Amenities(models.Model):
             return self.name_of_amenities
 
 class HostelAdmin(admin.ModelAdmin):
-    list_display=('manager','location')
-    search_fields =('hostel_name','location')
-    list_filter =('location',)
+
+    list_display=('hostel_name','hostel_manager_name','hostel_description','institution')
+    search_fields =('hostel_name','hostel_description')
+    list_filter =('hostel_name',)
+
     #inlines=[InstitutionInline]
 
 class InstitutionAdmin(admin.ModelAdmin):
