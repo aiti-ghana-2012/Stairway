@@ -21,8 +21,9 @@ $('.carousel').carousel()
 =============================================== -->
   <header class="jumbotron subhead" >
   <div class="row" id = "first-row">
-    <div class="span12">
-      <h1 class="list">{% block container%}
+    <div class="span12"><h1 class="prettyprint linenums">
+
+{% block container%}
 
  <!--{{ user_list.id }}-->
      {{ hostel_list.hostel_name }}&nbsp;&nbsp;Hostel
@@ -31,29 +32,26 @@ $('.carousel').carousel()
     </div>
   </div>
   <hr/>
-  <div class="row">
-    <div class="span6">
-      
-    </div>
-    
-  </div>
+  
   <div class="subnav">
     <ul class="nav nav-pills">
+      <li text-align = "center">LIST OF REGISTERED STUDENTS</li>
       
-      </ul><div class="span10" id="Search-second">
-    <form method = "post"  >
+      
+    </ul><form method = "POST" action = "" >
+<div class="span11" id="Search-second">
+    
    <input type="text" name = "studentsearch" id = "studentsearch"/>
    <input type="submit" name="Search" id="Search" value="Search" />   
 </form>
     </div>
   </div>
 
-<header>
-<hr />
+<p></p>
 
-
+<hr/>
 <!-- Middle
-=============================================== SHOWS A REGISTERED STUDENT'S DETAILS-->
+=============================================== -->
 
 
 
@@ -61,43 +59,35 @@ $('.carousel').carousel()
 
 <div class="row">
     <div class="span12"> 
-      <table border = 0 cellpadding = 0 cellspacing = 0 class = "list"><tr>
-
-<td height = 200 ><div id="pix" class="pix"><img src= "/static/images/uploads/{{ everystudent.picture }}" /></td>
-  <td class = "span8"></td>      
-      </tr>
-      
-        <td  height="35" width ="200"><label>INDEX_NUMBER:</label></td>
-        <td>{{ everystudent.id_number }}</td>
-      </tr>
-      <tr>
-        <td height="35"><label>SURNAME:</label></td>
-        <td>{{ everystudent.last_name }}</td>
-      </tr>
-      <tr>
-        <td height="35">OTHER NAMES:</td>
-        <td>{{ everystudent.first_name }}</td>
-      </tr>
-<tr>
-        <td height="35">HOSTEL NAME:</td>
-        <td></label></td>
-      </tr
-      <tr>
-        <td height="35">ROOM NUMBER:</td>
-        <td></label></td>
-      </tr>
-      <tr>
-        <td height="35">CONTACT NUMBER:</td>
-        <td>{{ everystudent.phone_number }}</label></td>
-      </tr>
-      <tr>
-        <td height="35"><label>PROGRAMME OF STUDY:</label></td>
-        <td>{{ everystudent.program_of_study }}</td>
-      </tr>
-      
-    </table>
-   
+      <table border = 1 cellpadding = 0 cellspacing = 0 class = "list">
+			
+	       <th > No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > NAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>          
+               <th > STUDENT ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > PROGRAMME OF STUDY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > GENDER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > ROOM N0. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > AMOUNT PAID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > CONTACT NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > DATE OF REGISTRATION</th>
 		    
+                       {% for eachstudent in student_list %} 
+                       <tr>
+					   <td >{{ i}}</td>
+					   <td >{{eachstudent.first_name}}&nbsp;&nbsp;{{eachstudent.last_name}}</td>
+                                           <td >{{eachstudent.id_number}}</td>
+					   <td >{{eachstudent.program_of_study}}</td>
+					   <td >{{eachstudent.gender}}</td>
+					   <td ></td>
+<td ></td>
+					   <td >{{eachstudent.phone_number}}</td>
+					   <td ></td>
+
+					   <td ></td>
+</tr>
+					  
+ {% endfor %}       
+     </table>
 
      </div>
      </div>

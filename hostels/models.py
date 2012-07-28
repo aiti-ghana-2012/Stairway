@@ -6,13 +6,15 @@ from django.contrib.auth.models import User
 
 class Hostel(models.Model):
       location = models.CharField(max_length = 255)
-      manager = models.ForeignKey(User)
+      manager = models.OneToOneField(User)
       manager_name = models.TextField()
       hostel_name = models.CharField(max_length = 255)
+      #user = models.ForeignKey(User, unique = True)
+     #myuser.groups = (manager)
       #room=models.ForeignKey(Rooms)
       #website = models.URLField()
       def __unicode__(self):
-            return self.hostel_name
+            return str(self.hostel_name)
 
 class Institution(models.Model):
       institution_name = models.CharField(max_length = 255)
@@ -25,9 +27,9 @@ class Institution(models.Model):
 
 class Student(models.Model):
       GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
-      gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
+      gender = models.CharField(max_length=10,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
-      user = models.ForeignKey(User, unique=True)
+      user = models.OneToOneField(User, unique=True)
       phone_number = models.IntegerField(max_length=10)
       first_name = models.CharField(max_length = 255)
       last_name = models.CharField(max_length = 255)
@@ -51,11 +53,13 @@ class Rooms(models.Model):
             return self.fee
 
 class Reservation(models.Model):
-      students = models.ManyToManyField(Student)
+      students = models.OneToOneField(Student)
       hostels = models.ForeignKey(Hostel)
       occupancy = models.IntegerField()
       status = models.CharField(max_length=60)
       date_of_registration = models.DateField(auto_now_add=True)
+      room_num = models.IntegerField()
+      reciept = models.CharField(max_length = 255)
       def __unicode__(self):
             return self.status
 
@@ -64,7 +68,6 @@ class Amenities(models.Model):
       room = models.ManyToManyField(Rooms)
       def __unicode__(self):
             return self.name_of_amenities
-
 
 class HostelAdmin(admin.ModelAdmin):
     list_display=('manager','location')
