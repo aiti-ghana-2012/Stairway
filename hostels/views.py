@@ -46,6 +46,8 @@ def home(request):
 
 def news(request):
     return render_to_response('hostels/news.html',{})
+def reserv(request):
+    return render_to_response('hostels/reservation.html',{})
 
 
 def hostel_manager(request):
