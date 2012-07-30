@@ -9,36 +9,21 @@
 =============================================== -->
   <div class="row">
     <div class="span4">
-     <!-- <div class="well sidebar-nav">
+      
+   <h3>All Institutions </h3>  
+{% for institution in allinstitutions %}
+
+           <div class="well">
             <ul class="nav nav-list">
-              <li class="nav-header">Institutions</li>
-              <li class="active"><a href="#">Knust</a></li>
-              <li><a href="#">University of Ghana, Legon</a></li>
-              <li><a href="#">Valley View University</a></li>
-           </ul>-->
-
-           <h3>Institutions</h3>
-           <div class="well">
-             <ul class="nav nav-list">
-              <li class="nav-header">Knust</li>
-              <li><a href="displayhostels">Hostels around Knust</a></li>
+            
+            
+            <li><a href="{{ institution.get_absolute_url }}">{{ institution.institution_name }} </a></li>
+              
            </ul>
 
            </div>
-           <div class="well">
-             <ul class="nav nav-list">
-              <li class="nav-header">University of Ghana, Legon</li>
-              <li><a href="#">Hostels around UG</a></li>
-           </ul>
+{% endfor %}
 
-           </div>
-           <div class="well">
-             <ul class="nav nav-list">
-              <li class="nav-header">Valley View University</li>
-              <li><a href="#">Hostels around VVU</a></li>
-           </ul>
-
-           </div>
      <!--/.well -->
     </div>
     <div class="span8">
