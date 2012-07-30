@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<html> <head>
+<title>Hostel Manager Page</title>
+<link href="/static/bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/css/docs.css" rel="stylesheet">
+<link href="/static/bootstrap/docs/assets/js/google-code-prettify-prettify.css" rel="stylesheet">
+<style>#first-row {text-align:left}
+.center {text-align:center}
+#Search-second {text-align:right}
+.row {border:2px}</style>
+<script>
+$('.carousel').carousel()
+</script>
+</head>
+
+<body>
+<div class="container">
+
+<!-- Masthead
+=============================================== -->
+  <header class="jumbotron subhead" >
+  <div class="row" id = "first-row">
+    <div class="span12">
+      <h1 class="prettyprint linenums">Amen Hostels</h1>
+      <br>
+    </div>
+  </div>
+  <hr/>
+  
+  <div class="subnav">
+    <ul class="nav nav-pills">
+      <li text-align = "center">LIST OF REGISTERED STUDENTS</li>
+      
+      
+    </ul><form method = "post"  >
+<div class="span11" id="Search-second">
+    
+   <input type="text" name = "studentsearch" id = "studentsearch"/>
+   <input type="submit" name="Search" id="Search" value="Search" />   
+</form>
+    </div>
+  </div>
+
+<p></p>
+
+<hr/>
+<!-- Middle
+=============================================== -->
+
+
+
+{% block content %}
+
+<div class="row">
+    <div class="span12"> 
+      <table border = 1 cellpadding = 0 cellspacing = 0 class = "list">
+			
+	       <th > No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > NAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>          
+               <th > STUDENT ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > PROGRAMME OF STUDY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > GENDER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > ROOM N0. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > AMOUNT PAID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       <th > CONTACT NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <th > DATE OF REGISTRATION</th>
+		    
+                       {% for eachstudent in student_list %} <tr>
+					   <td ></td>
+					   <td >{{eachstudent.first_name}}&nbsp;&nbsp;{{eachstudent.last_name}}</td>
+                                           <td >{{eachstudent.id_number}}</td>
+					   <td >{{eachstudent.program_of_study}}</td>
+					   <td >{{eachstudent.gender}}</td>
+					   <td ></td>
+<td ></td>
+					   <td >{{eachstudent.phone_number}}</td>
+					   <td ></td>
+
+					   <td ></td>
+</tr>
+					  
+ {% endfor %}       
+     </table>
+
+     </div>
+     </div>
+
+{% endblock %}
+<!-- Footer
+=============================================== -->
+<footer class="footer">
+<div class="row">
+  <div class="span4">
+    <p><a href="#ContactUs">Contact Us</a></p>
+    {% block footeradd1 %}
+    {% endblock %}
+  </div>
+  <div class="span4">
+    <p ><a href="#Location">Location</a></p>
+    {% block footeradd2 %}
+    {% endblock %}
+  </div>
+  <div class="span4">
+    <p><a href="">logout</a></p>
+  </div>
+</div>
+    <br/>
+    <p class="center">Copyright 2012, stairway e-hostels</p>
+
+</footer>
+</div>
