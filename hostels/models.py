@@ -1,3 +1,4 @@
+
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
@@ -26,7 +27,7 @@ class Hostel(models.Model):
 
 
 class Student(models.Model):
-      GENDER_CHOICES = (('M','Male'),('F','Female'),)
+      GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
       gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
       phone_number = models.CharField(max_length = 10)
@@ -70,9 +71,19 @@ class Amenities(models.Model):
 
 
 class HostelAdmin(admin.ModelAdmin):
+
     list_display=('hostel_name','hostel_manager_name','hostel_description','institution')
     search_fields =('hostel_name','hostel_description')
     list_filter =('hostel_name',)
+
+    list_display=('manager','location')
+
+    search_fields =('location',)
+
+    search_fields =('hostel_name','location')
+
+    list_filter =('location',)
+
     #inlines=[InstitutionInline]
 
 class InstitutionAdmin(admin.ModelAdmin):
