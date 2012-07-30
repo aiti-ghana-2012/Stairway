@@ -1,34 +1,36 @@
+
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
 
 # Create your models here.
-
-class Hostel(models.Model):
-      location = models.CharField(max_length = 255)
-      manager = models.ForeignKey(User)
-      manager_name = models.TextField()
-      hostel_name = models.CharField(max_length = 255)
-      #room=models.ForeignKey(Rooms)
-      #website = models.URLField()
-      def __unicode__(self):
-            return self.hostel_name
-
 class Institution(models.Model):
       institution_name = models.CharField(max_length = 255)
-      hostels = models.ForeignKey(Hostel)
-      #city = models.CharField(max_length=60)
       location = models.TextField()
-      #website = models.URLField()
       def __unicode__(self):
             return self.institution_name
+      
+      def get_absolute_url(self):
+       return "/hostels/homepage/%i/displayhostels" % self.id
+
+class Hostel(models.Model):
+      hostel_name = models.CharField(max_length = 255)
+      hostel_description = models.TextField()
+      manager = models.ForeignKey(User)  #the manager here is the database user
+      hostel_manager_name = models.CharField(max_length= 255)
+      institution = models.ForeignKey(Institution)
+      def __unicode__(self):
+            return self.hostel_name
+      def get_absolute_url(self):
+       return "/hostels/homepage/displayhostels/%i" % self.id
+
+
 
 class Student(models.Model):
-      GENDER_CHOICES = (('M','Male'),('F','Female'),)
+      GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
       gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
-      user = models.ForeignKey(User, unique=True)
-      phone_number = models.IntegerField(max_length=10)
+      phone_number = models.CharField(max_length = 10)
       first_name = models.CharField(max_length = 255)
       last_name = models.CharField(max_length = 255)
       school = models.ForeignKey(Institution)
@@ -42,19 +44,21 @@ class Student(models.Model):
             return str(self.id_number)
 
 class Rooms(models.Model):
-      room_number = models.IntegerField()
-      occupancy = models.IntegerField()
+      room_number = models.CharField(max_length=60)
+      OCCUPANCY_CHOICES =(('1 in a room','1 in a room'),('2 in a room','2 in a room'),('4 in a room','4 in a room'))
+      occupancy = models.CharField(max_length=100,choices=OCCUPANCY_CHOICES)
       space_available = models.IntegerField()
       hostel= models.ManyToManyField(Hostel)
       fee = models.DecimalField(max_digits=20, decimal_places=2)
       def __unicode__(self):
-            return self.fee
+            return str(self.occupancy)
 
 class Reservation(models.Model):
       students = models.ManyToManyField(Student)
       hostels = models.ForeignKey(Hostel)
-      occupancy = models.IntegerField()
-      status = models.CharField(max_length=60)
+      occupancy = models.ForeignKey(Rooms)
+      STATUS_CHOICES =(('reserved','reserved'),('not_reserved','not_reserved'))
+      status = models.CharField(max_length=60,choices=STATUS_CHOICES)
       date_of_registration = models.DateField(auto_now_add=True)
       def __unicode__(self):
             return self.status
@@ -67,9 +71,11 @@ class Amenities(models.Model):
 
 
 class HostelAdmin(admin.ModelAdmin):
-    list_display=('manager','location')
-    search_fields =('hostel_name','location')
-    list_filter =('location',)
+
+    list_display=('hostel_name','hostel_manager_name','hostel_description','institution')
+    search_fields =('hostel_name','hostel_description')
+    list_filter =('hostel_name',)
+
     #inlines=[InstitutionInline]
 
 class InstitutionAdmin(admin.ModelAdmin):
@@ -88,7 +94,10 @@ class ReservationAdmin(admin.ModelAdmin):
     list_filter=('students',)
 
 class InstitutionInline(admin.TabularInline):
-      model=Institution     
+    model=Institution     
+    
+
+
 admin.site.register(Hostel,HostelAdmin)
 admin.site.register(Institution,InstitutionAdmin) 
 admin.site.register(Student,StudentAdmin)
