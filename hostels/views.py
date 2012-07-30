@@ -10,15 +10,28 @@ from models import Hostel,Institution,Student,Rooms,Reservation,Amenities
 from django.shortcuts import render_to_response
 
 def frontpage(request):
-    return render_to_response('hostels/frontpage.html',{})
+    Inst= Institution.objects.all()
+    
+    my_context = Context({'allinstitutions':Inst})   
+    return render_to_response ('hostels/frontpage.html', my_context)
+    
+def hostels_list(request,id):
+    bla = Hostel.objects.filter(institution=id)
+    institute = Institution.objects.get(id=id)
+    my_context = Context({'allhostels':bla,'institution':institute})   
+    return render_to_response ('hostels/hostels_list.html', my_context)
 
-def hostels_list(request):
-    return render_to_response('hostels/hostels_list.html',{})
 
 
 
-def hostels_detail(request,id,hostelinfo):
-    return render_to_response('hostels/hostels_detail.html',{})
+def hostels_detail(request,id):
+    p = Hostel.objects.filter(hostel_name=id)
+    q = Hostel.objects.get(id=id) 
+    
+    return render_to_response('hostels/hostels_detail.html', my_context)
+    pass 
+
+   
 
 
 def studregister(request,id,hostelinfo):
