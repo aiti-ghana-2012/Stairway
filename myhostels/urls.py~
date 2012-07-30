@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 from django.conf.urls import patterns, include, url
 from django.conf import settings
 # Uncomment the next two lines to enable the admin:
@@ -12,18 +11,29 @@ urlpatterns = patterns('',
     # url(r'^myhostels/', include('myhostels.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
+
+
+    # Uncomment the next line to enable the admin:
+    url(r'^admin/', include(admin.site.urls)),
+    url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
+
+     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
+
+    # Uncomment the next line to enable the admin:
+
+      url(r'^hostels/', include('hostels.urls')),
+
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 
-=======
->>>>>>> 386deb1feb54302abcbd70ebd7c3dfd0a4e24a21
     url(r'^hostels/', include('hostels.urls')),
+    url(r'^studentapp/', include('studentapp.urls')),
+    url(r'^managerapp/', include('managerapp.urls')),
 
 )
->>>>>>> a45fa1a56f55de7c76bc8f3c39466ddc6151c04e
+

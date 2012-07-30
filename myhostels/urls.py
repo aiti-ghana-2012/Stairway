@@ -12,12 +12,6 @@ urlpatterns = patterns('',
 
     # Uncomment the admin/doc line below to enable admin documentation:
 
-     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
-     url(r'^admin/', include(admin.site.urls)),
-
-    url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
@@ -25,14 +19,10 @@ urlpatterns = patterns('',
 
      url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
-    # Uncomment the next line to enable the admin:
-     url(r'^admin/', include(admin.site.urls)),
-
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-      url(r'^admin/', include(admin.site.urls)),
-      url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
+
       url(r'^hostels/', include('hostels.urls')),
 
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
@@ -41,12 +31,9 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
 
-<<<<<<< HEAD
-
-=======
     url(r'^hostels/', include('hostels.urls')),
     url(r'^studentapp/', include('studentapp.urls')),
     url(r'^managerapp/', include('managerapp.urls')),
->>>>>>> 64dd8cc1e2255fc21668d27891606af6db8a0e49
+
 )
 

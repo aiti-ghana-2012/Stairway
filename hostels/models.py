@@ -76,14 +76,6 @@ class HostelAdmin(admin.ModelAdmin):
     search_fields =('hostel_name','hostel_description')
     list_filter =('hostel_name',)
 
-    list_display=('manager','location')
-
-    search_fields =('location',)
-
-    search_fields =('hostel_name','location')
-
-    list_filter =('location',)
-
     #inlines=[InstitutionInline]
 
 class InstitutionAdmin(admin.ModelAdmin):

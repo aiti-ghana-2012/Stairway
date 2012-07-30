@@ -71,11 +71,11 @@ class Amenities(models.Model):
 
 
 class HostelAdmin(admin.ModelAdmin):
-<<<<<<< HEAD
+
     list_display=('hostel_name','hostel_manager_name','hostel_description','institution')
     search_fields =('hostel_name','hostel_description')
     list_filter =('hostel_name',)
-=======
+
     list_display=('manager','location')
 
     search_fields =('location',)
@@ -83,7 +83,7 @@ class HostelAdmin(admin.ModelAdmin):
     search_fields =('hostel_name','location')
 
     list_filter =('location',)
->>>>>>> 909b4b83165c2f2b276fb0390089164cdf4dfea2
+
     #inlines=[InstitutionInline]
 
 class InstitutionAdmin(admin.ModelAdmin):
