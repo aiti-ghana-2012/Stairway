@@ -31,7 +31,7 @@ $('.carousel').carousel()
   <hr/>
   <div class="row">
     <div class="span6">
-      <p class="lead"><i>The online resource for student hostels</i></p>
+      <p class="lead">The online resource for student hostels</p>
     </div>
     <div class="span6" id="Search-second">
       <input type="text"/>
@@ -40,24 +40,16 @@ $('.carousel').carousel()
   </div>
   <div class="subnav">
     <ul class="nav nav-pills">
-<<<<<<< HEAD
-      <li><a href="/hostels/homepage/about_us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-      <li><a href="/hostels/homepage/news">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;News and Events&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-      <li><a href="/hostels/homepage/roomreservation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Room Reservation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-      <li><a href="#galery">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photo Gallery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-=======
-      <li><a href="aboutus">About Us</a></li>
+      <li><a href="about_us.html">About Us</a></li>
       <li><a href="#news">News and Events</a></li>
-      <li><a href="#room-res">Room Reservation</a></li>
+      <li><a href="reservation.html">Room Reservation</a></li>
       <li><a href="#galery">Photo Gallery</a></li>
->>>>>>> f14277aa2c63efe054f733fcf317efcce00d9271
     </ul>
   </div>
 
 <header>
 <hr />
 
-<a href="/hostels/homepage">Frontpage</a>
 
 <!-- Middle
 =============================================== -->
@@ -74,15 +66,16 @@ $('.carousel').carousel()
 <div class="row">
   <div class="span4">
     <p><a href="#ContactUs">Contact Us</a></p>
-  <!--  {% block footeradd1 %}
-    {% endblock %} -->
+    {% block footeradd1 %}
+    {% endblock %}
   </div>
   <div class="span4">
-    <p ><a href="/hostels/homepage/studentreg">Register With Us</a></p>
-
+    <p ><a href="#Location">Location</a></p>
+    {% block footeradd2 %}
+    {% endblock %}
   </div>
   <div class="span4">
-    <p><a href="/hostels/homepage/terms">Terms and Conditions</a></p>
+    <p><a href="#Register">Register with Us</a></p>
   </div>
 </div>
     <br/>

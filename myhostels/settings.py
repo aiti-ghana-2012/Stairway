@@ -77,7 +77,8 @@ STATIC_URL = '/static/'
 # Additional locations of static files
 
 STATICFILES_DIRS = (
-    os.path.join(SITE_ROOT, 'images'),
+    os.path.join(SITE_ROOT,'images'),
+
     os.path.join(SITE_ROOT,'assets'),
 
 
@@ -127,7 +128,8 @@ TEMPLATE_DIRS = (
     # Don't forget to use absolute paths, not relative paths.
 )
 
-INSTALLED_APPS = (
+INSTALLED_APPS = ('studentapp',
+                  'managerapp',
     'hostels',
     'django.contrib.auth',
     'django.contrib.contenttypes',

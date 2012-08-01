@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect
 from django.template import Context, loader
 from django.http import HttpResponse
-
+from django.contrib.auth.models import User
 from models import Hostel,Institution,Student,Rooms,Reservation,Amenities 
 from django.shortcuts import render_to_response
 
@@ -21,7 +21,6 @@ def hostels_list(request,id):
     description = Institution.objects.filter(id=id)
     my_context = Context({'allhostels':bla,'institution':institute,'description':description})   
     return render_to_response ('hostels/hostels_list.html', my_context)
-
 
 def hostels_detail(request,id):
     amenities=[]
@@ -39,6 +38,7 @@ def hostels_detail(request,id):
             amenities.append(a)
     my_context = Context({'hostel':q,'amenities':amenities,'allhostels':allhostels,'hostelfee':hostelfee})    
     return render_to_response('hostels/hostels_detail.html', my_context)
+
 
 
 class RegistrationForm(ModelForm):
@@ -76,28 +76,66 @@ def roomreservation(request):
     return render_to_response('hostels/room_reservation.html', my_context)
 
 
+def about_us(request):
+    return render_to_response('hostels/about_us.html', {})
 
 
-def studconfirm(request,id,hostelinfo):
+
+def studconfirm(request):
     return render_to_response('hostels/student_confirmation.html',{})
 
-def about_us(request):
-    return render_to_response('hostels/about_us.html',{})
 
 def terms(request):
     return render_to_response('hostels/terms.html',{})
 
+
+
 def news(request):
     return render_to_response('hostels/news.html',{})
-
+def reserv(request):
+    return render_to_response('hostels/reservation.html',{})
 
 def hostel_manager(request):
+
     student_list = Student.objects.all()
     return render_to_response('hostels/hostel_manager_page.html', {'student_list':student_list})
 
-
+    current_user = request.user
+    if Student.objects.filter(user = current_user).count() is 1:
+        return HttpResponseRedirect("/hostels/homepage/student_confirmation")
+    else:
+        thishostel = Hostel.objects.get(manager = current_user)
+        student_list = thishostel.student_set.all()
+        if request.method == 'POST':
+           currentid = request.POST['studentsearch']
+           thisstudent= Student.objects.get(id_number = currentid)
+           return render_to_response('hostels/particularstudent.html', {'everystudent':thisstudent, 'hostel_list':thishostel})
+        else:
+            return render_to_response('hostels/hostel_manager_page.html', {'hostel_list':thishostel,'student_list':student_list})
+        
+"""@csrf_exempt
+>>>>>>> f14277aa2c63efe054f733fcf317efcce00d9271
 def hostel_student(request):
+<<<<<<< HEAD
+    current_user = request.user
+    request.POST
+    
+    if Student.objects.filter(user = current_user).count() is 1:
+        return HttpResponseRedirect("/hostels/homepage/student_confirmation")
+    else:
+        thishostel = Hostel.objects.get(manager = current_user)
+        #student_list = thishostel.student_set.all()
+        thisstudent= Student.objects.get(id_number = current_studentid)
+        current_user = request.user
+    user_list = User.objects.get(username = usename)
+    user_id = user_list.id
+    studentid = request.session['studentid']
+    hostel_list = Hostel.objects.get(id = user_id)
+    
+    return render_to_response('hostels/particularstudent.html',{"hostel_list":thishostel, 'everystudent':thisstudent})"""
+
     return render_to_response('hostels/particularstudent.html',{})
+
 
 
 def home(request):
