@@ -79,6 +79,9 @@ def roomreservation(request):
 def about_us(request):
     return render_to_response('hostels/about_us.html', {})
 
+def contact_us(request):
+    return render_to_response('hostels/contact_us.html', {})
+
 
 
 def studconfirm(request):

@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^homepage/news$','hostels.views.news'),
     url(r'^homepage/about_us$', 'hostels.views.about_us'),
     url(r'^homepage/terms$', 'hostels.views.terms'),
+    url(r'^homepage/terms$', 'hostels.views.contact_us'),
 
     url(r'^homepage/managerpage/$', 'hostels.views.hostel_manager'),
     url(r'^homepage/managerpage/student/$','hostels.views.hostel_student'),
