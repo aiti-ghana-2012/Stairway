@@ -1,4 +1,4 @@
-
+from django.forms import ModelForm
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
@@ -28,7 +28,7 @@ class Hostel(models.Model):
 
 class Student(models.Model):
       GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
-      gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
+      gender = models.CharField(max_length=6,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
       phone_number = models.CharField(max_length = 10)
       first_name = models.CharField(max_length = 255)
@@ -40,6 +40,7 @@ class Student(models.Model):
       LEVEL_IN_SCHOOL_CHOICES= (('100','100'), ('200','200'), ('300','300'), ('400','400'))
       level = models.CharField(max_length = 4, choices = LEVEL_IN_SCHOOL_CHOICES)
       picture = models.ImageField(upload_to = 'images/uploads/')
+      user=models.OneToOneField(User,)
       def __unicode__(self):
             return str(self.id_number)
 
@@ -68,6 +69,10 @@ class Amenities(models.Model):
       room = models.ManyToManyField(Rooms)
       def __unicode__(self):
             return self.name_of_amenities
+class Confirmation(models.Model):
+      receipt_num=models.CharField(max_length=255)
+      amount_paid=models.IntegerField()
+      con=models.ForeignKey(Student)
 
 
 class HostelAdmin(admin.ModelAdmin):
@@ -103,6 +108,7 @@ admin.site.register(Institution,InstitutionAdmin)
 admin.site.register(Student,StudentAdmin)
 admin.site.register(Reservation,ReservationAdmin)
 admin.site.register(Amenities)
-admin.site.register(Rooms) 
+admin.site.register(Rooms)
+admin.site.register(Confirmation)
 
 
