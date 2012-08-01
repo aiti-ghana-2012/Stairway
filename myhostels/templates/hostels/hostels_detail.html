@@ -9,25 +9,31 @@
 =============================================== -->
   <div class="row">
     <div class="span4">
+
+
            
-           <h3 color ="ff">WELCOME TO {{   }}  </h3>
+           <h3 color ="ff">Welcome to {{ hostel }}  </h3>
            <div class="well">
              <ul class="nav nav-list">
               <li class="nav-header">Available Facilities</li>
-              <li>Kitchen</li>
-              <li>Study Room</li>
-	      <li>Balcony</li>
-	      <li>Self-Contained Washroom</li>
-	     <li>DSTV</li>
-		<li>Car Park</li>
-		<li>Air Condition</li>
-		<li>Shuttle</li>
-           </ul>
+              
+              {% for amenity in amenities %}
+
+
+              <li>{{amenity.name}}</li> 
+
+            
+              {% endfor %}           
+              </ul>
 
 
            </div>
            <div class="well">
              <ul class="nav nav-list">
+
+             {% for i in hostelfee %}
+              <li> {{i.hostelfee}}</li>
+             {% endfor %}
               <li class="nav-header">Prices</li>
               <li>1 in a room : GHS2000.00</li>
               <li>2 in a room : GHS1000.00</li>
@@ -39,13 +45,14 @@
            <div class="well">
              <ul class="nav nav-list">
               <li class="nav-header">Contact Information</li>
-              <li>Name of Manager: Mr. Ibrahim Appiah</li>
-              <li>Contact Number:  0272010021</li>
-              <li>Email Address:   ibrahim@amenhostels.com</li>
- 
-              
-           </ul>
-</div>
+
+                   {% for a in allhostels %}
+           
+                  <li > {{a.hostel_manager_details}} </li>
+                   {% endfor %} 
+        
+              </ul>
+            </div>
 
 
            
@@ -65,14 +72,14 @@
               <div class="item">
                 <img src="/static/bootstrap/docs/assets/img/3.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>corridor</h4>
+                  <h4>rooms</h4>
                   <p></p>
                 </div>
               </div>
               <div class="item">
                 <img src="/static/bootstrap/docs/assets/img/franco3.jpg" alt="">
                 <div class="carousel-caption">
-                  <h4>rooms</h4>
+                  <h4>corridor</h4>
                   <p></p>
                 </div>
               </div>
@@ -102,14 +109,17 @@
   </div>
   <div class="span8">
     <div class="page-header">
-      <h2 class="left">ABOUT AMEN HOSTELS</h2>
-      <p >Amen Hostels are modern hostels with very good facilities that fit</br>
-         hostels for student habitation. It is made the main and the annnex </br>
-         buildings which are both located at Ayeduase on the Kotei road. It is </br>
-         the third building on your left after Bonsuom.</p>
+      <h2 class="left">About {{ hostel }}</h2>
+          {% for a in allhostels %}
+           
+      <p > {{a.hostel_description}} </p>
+          {% endfor %} 
+      
     </div>
   </div>
+       
 </div>
 
+     <a href="/hostels/homepage/studentreg" ><h2 style="color:#A52A2A"> REGISTER NOW</h2>  </a>
 
 {% endblock %} 

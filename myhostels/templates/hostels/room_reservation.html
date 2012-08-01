@@ -1,0 +1,33 @@
+<!-- this is a child template of the base html -->
+
+{% extends "hostels/base.html" %}
+{% block content %}
+
+<h3> Information about the rooms are shown below: </h3>
+<br />
+<div class="row">
+    <div class="span3">
+      {% for a in reservation %}
+
+       <li>{{a.occupancy}}</li>
+       
+ 
+     </div>
+     <div class="span3">
+      <li>{{a.space_available}} </li> 
+     </div>
+     <div class="span3">
+     {{a.room_number}}
+     </div>
+     <div class="span3">
+     {{ a.room_number }}
+     </div>
+</div>
+
+
+
+
+
+
+{% endfor %}
+{% endblock %}
