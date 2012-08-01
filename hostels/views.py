@@ -104,6 +104,9 @@ def about_us(request):
 def contact_us(request):
     return render_to_response('hostels/contact_us.html', {})
 
+def faq(request):
+    return render_to_response('hostels/faq.html', {})
+
 
 
 def studconfirm(request):

@@ -16,6 +16,11 @@ urlpatterns = patterns('',
 
     url(r'^homepage/contact_us$', 'hostels.views.contact_us'),
 
+    url(r'^homepage/faq$', 'hostels.views.faq'),
+
+
+    url(r'^homepage/managerpage/$', 'hostels.views.hostel_manager'),
+    #url(r'^homepage/managerpage/student/$','hostels.views.hostel_student'),
 
     #url(r'^hostel_manager_page/(?P<hostel_id>\d+)/$', 'hostels.views.hostel_manager'),
     url(r'^hostel_manager_page/$', 'hostels.views.hostel_manager'),
