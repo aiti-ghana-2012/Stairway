@@ -14,6 +14,7 @@ class Institution(models.Model):
        return "/hostels/homepage/%i/displayhostels" % self.id
 
 class Hostel(models.Model):
+
       hostel_name = models.CharField(max_length = 255)
       hostel_description = models.TextField()
       manager = models.ForeignKey(User)  #the manager here is the database user
@@ -26,11 +27,15 @@ class Hostel(models.Model):
 
 
 
+
 class Student(models.Model):
       GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
-      gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
+      gender = models.CharField(max_length=10,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
-      phone_number = models.CharField(max_length = 10)
+
+      user = models.OneToOneField(User, unique=True)
+      phone_number = models.IntegerField(max_length=10)
+
       first_name = models.CharField(max_length = 255)
       last_name = models.CharField(max_length = 255)
       school = models.ForeignKey(Institution)
@@ -54,12 +59,14 @@ class Rooms(models.Model):
             return str(self.occupancy)
 
 class Reservation(models.Model):
-      students = models.ManyToManyField(Student)
+      students = models.OneToOneField(Student)
       hostels = models.ForeignKey(Hostel)
       occupancy = models.ForeignKey(Rooms)
       STATUS_CHOICES =(('reserved','reserved'),('not_reserved','not_reserved'))
       status = models.CharField(max_length=60,choices=STATUS_CHOICES)
       date_of_registration = models.DateField(auto_now_add=True)
+      room_num = models.IntegerField()
+      reciept = models.CharField(max_length = 255)
       def __unicode__(self):
             return self.status
 
@@ -69,20 +76,11 @@ class Amenities(models.Model):
       def __unicode__(self):
             return self.name_of_amenities
 
-
 class HostelAdmin(admin.ModelAdmin):
 
     list_display=('hostel_name','hostel_manager_name','hostel_description','institution')
     search_fields =('hostel_name','hostel_description')
     list_filter =('hostel_name',)
-
-    list_display=('manager','location')
-
-    search_fields =('location',)
-
-    search_fields =('hostel_name','location')
-
-    list_filter =('location',)
 
     #inlines=[InstitutionInline]
 

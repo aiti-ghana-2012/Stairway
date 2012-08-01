@@ -14,18 +14,7 @@ class Institution(models.Model):
        return "/hostels/homepage/%i/displayhostels" % self.id
 
 class Hostel(models.Model):
-<<<<<<< HEAD
-      location = models.CharField(max_length = 255)
-      manager = models.OneToOneField(User)
-      manager_name = models.TextField()
-      hostel_name = models.CharField(max_length = 255)
-      #user = models.ForeignKey(User, unique = True)
-     #myuser.groups = (manager)
-      #room=models.ForeignKey(Rooms)
-      #website = models.URLField()
-      def __unicode__(self):
-            return str(self.hostel_name)
-=======
+
       hostel_name = models.CharField(max_length = 255)
       hostel_description = models.TextField()
       manager = models.ForeignKey(User)  #the manager here is the database user
@@ -36,19 +25,17 @@ class Hostel(models.Model):
       def get_absolute_url(self):
        return "/hostels/homepage/displayhostels/%i" % self.id
 
->>>>>>> b8513d67b0019e1ded237ab18b623d73d5a9f203
+
 
 
 class Student(models.Model):
       GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
       gender = models.CharField(max_length=10,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
-<<<<<<< HEAD
+
       user = models.OneToOneField(User, unique=True)
       phone_number = models.IntegerField(max_length=10)
-=======
-      phone_number = models.CharField(max_length = 10)
->>>>>>> b8513d67b0019e1ded237ab18b623d73d5a9f203
+
       first_name = models.CharField(max_length = 255)
       last_name = models.CharField(max_length = 255)
       school = models.ForeignKey(Institution)
