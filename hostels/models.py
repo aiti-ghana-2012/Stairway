@@ -16,6 +16,7 @@ class Institution(models.Model):
        return "/hostels/homepage/%i/displayhostels" % self.id
 
 class Hostel(models.Model):
+
       hostel_name = models.CharField(max_length = 255)
       hostel_description = models.TextField()
       manager = models.ForeignKey(User)  #the manager here is the database user
@@ -28,15 +29,20 @@ class Hostel(models.Model):
 
 
 
+
 class Student(models.Model):
       GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
       gender = models.CharField(max_length=6,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
       studuser = models.OneToOneField(User)
       phone_number = models.CharField(max_length = 10)
+
+      id_number = models.IntegerField()
+      phone_number = models.IntegerField(max_length=10)
       first_name = models.CharField(max_length = 255)
       last_name = models.CharField(max_length = 255)
       date_of_birth = models.DateField(default = "DD-MM-YYYY")
+
       school = models.ForeignKey(Institution)
       program_of_study = models.CharField(max_length = 255)
       email = models.EmailField()
@@ -66,17 +72,21 @@ class Rooms(models.Model):
             return str(self.occupancy)
 
 class Reservation(models.Model):
-      students = models.ManyToManyField(Student)
+      students = models.OneToOneField(Student)
       hostels = models.ForeignKey(Hostel)
       occupancy = models.ForeignKey(Rooms)
       STATUS_CHOICES =(('reserved','reserved'),('not_reserved','not_reserved'))
       status = models.CharField(max_length=60,choices=STATUS_CHOICES)
       date_of_registration = models.DateField(auto_now_add=True)
+
       roomnumber = models.CharField(max_length=60)
+      reciept = models.CharField(max_length = 255)
       def __unicode__(self):
             return self.status
 
 
+class AmenitiesAdmin(admin.ModelAdmin):
+    list_display=('name')
 
 class AmenitiesAdmin(admin.ModelAdmin):
     list_display=('name')
