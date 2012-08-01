@@ -13,11 +13,12 @@ from django.contrib.admin import widgets
 
 def frontpage(request):
     Inst= Institution.objects.all()
-    
+   
     my_context = Context({'allinstitutions':Inst})   
     return render_to_response ('hostels/frontpage.html', my_context)
     
 def hostels_list(request,id):
+    
     bla = Hostel.objects.filter(institution=id) #gets the institution attribute of the Hostel class 
     institute = Institution.objects.get(id=id)  #gets the id of the Institution class
     description = Institution.objects.filter(id=id)
@@ -134,28 +135,7 @@ def hostel_manager(request):
            return render_to_response('hostels/particularstudent.html', {'everystudent':thisstudent, 'hostel_list':thishostel})
         else:
             return render_to_response('hostels/hostel_manager_page.html', {'hostel_list':thishostel,'student_list':student_list})
-        
-"""@csrf_exempt
->>>>>>> f14277aa2c63efe054f733fcf317efcce00d9271
->>>>>>> c4724c7be624ab49cd0c91c62b9d2b57c44f7d0d
-def hostel_student(request):
-<<<<<<< HEAD
-    current_user = request.user
-    request.POST
-    
-    if Student.objects.filter(user = current_user).count() is 1:
-        return HttpResponseRedirect("/hostels/homepage/student_confirmation")
-    else:
-        thishostel = Hostel.objects.get(manager = current_user)
-        #student_list = thishostel.student_set.all()
-        thisstudent= Student.objects.get(id_number = current_studentid)
-        current_user = request.user
-    user_list = User.objects.get(username = usename)
-    user_id = user_list.id
-    studentid = request.session['studentid']
-    hostel_list = Hostel.objects.get(id = user_id)
-    
-    return render_to_response('hostels/particularstudent.html',{"hostel_list":thishostel, 'everystudent':thisstudent})"""
+
 
     return render_to_response('hostels/particularstudent.html',{})
 

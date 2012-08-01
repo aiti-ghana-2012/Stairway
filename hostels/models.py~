@@ -13,7 +13,7 @@ class Institution(models.Model):
             return self.institution_name
       
       def get_absolute_url(self):
-       return "/hostels/homepage/%i/displayhostels" % self.id
+       return "/hostels/homepage/displayhostels/%i" % self.id
 
 class Hostel(models.Model):
 
@@ -24,8 +24,9 @@ class Hostel(models.Model):
       institution = models.ForeignKey(Institution)
       def __unicode__(self):
             return self.hostel_name
-      def get_absolute_url(self):
-       return "/hostels/homepage/displayhostels/%i" % self.id
+
+      def get_hostel_url(self):
+       return "/hostels/homepage/%i/displayhostels" % self.id
 
 
 

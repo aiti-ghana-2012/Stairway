@@ -9,36 +9,21 @@
 =============================================== -->
   <div class="row">
     <div class="span4">
-     <!-- <div class="well sidebar-nav">
+      
+   <h3>All Institutions </h3>  
+{% for institution in allinstitutions %}
+
+           <div class="well">
             <ul class="nav nav-list">
-              <li class="nav-header">Institutions</li>
-              <li class="active"><a href="#">Knust</a></li>
-              <li><a href="#">University of Ghana, Legon</a></li>
-              <li><a href="#">Valley View University</a></li>
-           </ul>-->
-
-           <h3>Institutions</h3>
-           <div class="well">
-             <ul class="nav nav-list">
-              <li class="nav-header">Knust</li>
-              <li><a href="displayhostels">Hostels around Knust</a></li>
+            
+            
+            <li><a href="{{ institution.get_absolute_url }}">{{ institution.institution_name }} </a></li>
+              
            </ul>
 
            </div>
-           <div class="well">
-             <ul class="nav nav-list">
-              <li class="nav-header">University of Ghana, Legon</li>
-              <li><a href="#">Hostels around UG</a></li>
-           </ul>
+{% endfor %}
 
-           </div>
-           <div class="well">
-             <ul class="nav nav-list">
-              <li class="nav-header">Valley View University</li>
-              <li><a href="#">Hostels around VVU</a></li>
-           </ul>
-
-           </div>
      <!--/.well -->
     </div>
     <div class="span8">
@@ -96,7 +81,7 @@
   <div class="span8">
     <div class="page-header">
       <h2 class="center">Akwaaba</h2>
-      <p>Stairway offers students convenient, less costly, faster and easier way of booking rooms in a particular hostel of their choice in their various institutions. We offer hostel managers as well the ease of managing their database.The system is meant to provide services that would reduce difficulties in locating hostels. It also meant to reduce stress and reduce the high cost involved in booking rooms in hostels manually. Hostel managers on the other hand would be relieved of the burden and stress of assigning rooms to their students and managing a large amount of data manually.</p>
+      <p>Where stairs are open on one or both sides, the first step above the lower floor may be wider than the other steps and rounded. The balusters typically form a semicircle around the circumference of the rounded portion and the handrail has a horizontal spiral called a "volute" that supports the top of the balusters. Besides the cosmetic appeal, starting steps allow the balusters to form a wider, more stable base for the end of the handrail. Handrails that simply end at a post at the foot of the stairs can be less sturdy, even with a thick post. A double bullnose can be used when both sides of the stairs are open.</p>
     </div>
   </div>
 </div>
