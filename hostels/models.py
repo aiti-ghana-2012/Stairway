@@ -3,6 +3,7 @@ from datetime import date
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
+from datetime import datetime
 
 # Create your models here.
 class Institution(models.Model):
@@ -40,14 +41,15 @@ class Student(models.Model):
       phone_number = models.IntegerField(max_length=10)
       first_name = models.CharField(max_length = 255)
       last_name = models.CharField(max_length = 255)
-      date_of_birth = models.DateField(null=True)
+      date_of_birth = models.DateField(default = "DD-MM-YYYY")
+
       school = models.ForeignKey(Institution)
       program_of_study = models.CharField(max_length = 255)
       email = models.EmailField()
       hostels = models.ForeignKey(Hostel)
       LEVEL_IN_SCHOOL_CHOICES= (('100','100'), ('200','200'), ('300','300'), ('400','400'))
       level = models.CharField(max_length = 4, choices = LEVEL_IN_SCHOOL_CHOICES)
-      picture = models.ImageField(upload_to = 'images/uploads/')
+      picture = models.ImageField(upload_to = 'images/uploads/', blank=True)
       def __unicode__(self):
             return str(self.id_number)
 
@@ -81,6 +83,10 @@ class Reservation(models.Model):
       reciept = models.CharField(max_length = 255)
       def __unicode__(self):
             return self.status
+
+
+class AmenitiesAdmin(admin.ModelAdmin):
+    list_display=('name')
 
 class AmenitiesAdmin(admin.ModelAdmin):
     list_display=('name')
