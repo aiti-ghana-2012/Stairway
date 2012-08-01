@@ -82,6 +82,9 @@ def about_us(request):
 def contact_us(request):
     return render_to_response('hostels/contact_us.html', {})
 
+def faq(request):
+    return render_to_response('hostels/faq.html', {})
+
 
 
 def studconfirm(request):
@@ -116,26 +119,7 @@ def hostel_manager(request):
         else:
             return render_to_response('hostels/hostel_manager_page.html', {'hostel_list':thishostel,'student_list':student_list})
         
-"""@csrf_exempt
->>>>>>> f14277aa2c63efe054f733fcf317efcce00d9271
-def hostel_student(request):
-<<<<<<< HEAD
-    current_user = request.user
-    request.POST
-    
-    if Student.objects.filter(user = current_user).count() is 1:
-        return HttpResponseRedirect("/hostels/homepage/student_confirmation")
-    else:
-        thishostel = Hostel.objects.get(manager = current_user)
-        #student_list = thishostel.student_set.all()
-        thisstudent= Student.objects.get(id_number = current_studentid)
-        current_user = request.user
-    user_list = User.objects.get(username = usename)
-    user_id = user_list.id
-    studentid = request.session['studentid']
-    hostel_list = Hostel.objects.get(id = user_id)
-    
-    return render_to_response('hostels/particularstudent.html',{"hostel_list":thishostel, 'everystudent':thisstudent})"""
+
 
     return render_to_response('hostels/particularstudent.html',{})
 

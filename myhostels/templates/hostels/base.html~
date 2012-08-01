@@ -39,18 +39,13 @@ $('.carousel').carousel()
     </div>
   </div>
   <div class="subnav">
-    <ul class="nav nav-pills">
-<<<<<<< HEAD
+
       <li><a href="/hostels/homepage/about_us">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About Us&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       <li><a href="/hostels/homepage/news">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;News and Events&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       <li><a href="/hostels/homepage/roomreservation">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Room Reservation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
       <li><a href="#galery">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Photo Gallery&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
-=======
-      <li><a href="aboutus">About Us</a></li>
-      <li><a href="#news">News and Events</a></li>
-      <li><a href="#room-res">Room Reservation</a></li>
-      <li><a href="#galery">Photo Gallery</a></li>
->>>>>>> f14277aa2c63efe054f733fcf317efcce00d9271
+<li><a href="/hostels/homepage/">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FAQ&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
     </ul>
   </div>
 
@@ -73,7 +68,7 @@ $('.carousel').carousel()
 <footer class="footer">
 <div class="row">
   <div class="span4">
-    <p><a href="#ContactUs">Contact Us</a></p>
+    <p><a href="/hostels/homepage/contact_us">Contact Us</a></p>
   <!--  {% block footeradd1 %}
     {% endblock %} -->
   </div>
