@@ -1,4 +1,5 @@
 
+from datetime import date
 from django.db import models
 from django.contrib import admin
 from django.contrib.auth.models import User
@@ -17,7 +18,7 @@ class Hostel(models.Model):
       hostel_name = models.CharField(max_length = 255)
       hostel_description = models.TextField()
       manager = models.ForeignKey(User)  #the manager here is the database user
-      hostel_manager_name = models.CharField(max_length= 255)
+      hostel_manager_details = models.TextField()
       institution = models.ForeignKey(Institution)
       def __unicode__(self):
             return self.hostel_name
@@ -28,11 +29,13 @@ class Hostel(models.Model):
 
 class Student(models.Model):
       GENDER_CHOICES = (('Male','Male'),('Female','Female'),)
-      gender = models.CharField(max_length=1,choices=GENDER_CHOICES)
+      gender = models.CharField(max_length=6,choices=GENDER_CHOICES)
       id_number = models.IntegerField()
+      studuser = models.OneToOneField(User)
       phone_number = models.CharField(max_length = 10)
       first_name = models.CharField(max_length = 255)
       last_name = models.CharField(max_length = 255)
+      date_of_birth = models.DateField(null=True)
       school = models.ForeignKey(Institution)
       program_of_study = models.CharField(max_length = 255)
       email = models.EmailField()
@@ -43,13 +46,21 @@ class Student(models.Model):
       def __unicode__(self):
             return str(self.id_number)
 
+
+class Amenities(models.Model):
+      name = models.CharField(max_length = 255)
+     #room = models.ManyToManyField(Rooms)
+      def __unicode__(self):
+            return self.name
+
 class Rooms(models.Model):
       room_number = models.CharField(max_length=60)
       OCCUPANCY_CHOICES =(('1 in a room','1 in a room'),('2 in a room','2 in a room'),('4 in a room','4 in a room'))
       occupancy = models.CharField(max_length=100,choices=OCCUPANCY_CHOICES)
       space_available = models.IntegerField()
-      hostel= models.ManyToManyField(Hostel)
+      hostel= models.ForeignKey(Hostel)
       fee = models.DecimalField(max_digits=20, decimal_places=2)
+      amenities = models.ManyToManyField(Amenities)
       def __unicode__(self):
             return str(self.occupancy)
 
@@ -60,19 +71,18 @@ class Reservation(models.Model):
       STATUS_CHOICES =(('reserved','reserved'),('not_reserved','not_reserved'))
       status = models.CharField(max_length=60,choices=STATUS_CHOICES)
       date_of_registration = models.DateField(auto_now_add=True)
+      roomnumber = models.CharField(max_length=60)
       def __unicode__(self):
             return self.status
 
-class Amenities(models.Model):
-      name_of_amenities = models.CharField(max_length = 255)
-      room = models.ManyToManyField(Rooms)
-      def __unicode__(self):
-            return self.name_of_amenities
 
+
+class AmenitiesAdmin(admin.ModelAdmin):
+    list_display=('name')
 
 class HostelAdmin(admin.ModelAdmin):
 
-    list_display=('hostel_name','hostel_manager_name','hostel_description','institution')
+    list_display=('hostel_name','hostel_manager_details','hostel_description','institution')
     search_fields =('hostel_name','hostel_description')
     list_filter =('hostel_name',)
 
