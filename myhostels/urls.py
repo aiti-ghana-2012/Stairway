@@ -19,6 +19,7 @@ urlpatterns = patterns('',
       url(r'^admin/', include(admin.site.urls)),
       url(r'^static/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.STATIC_ROOT,}),
       url(r'^hostels/', include('hostels.urls')),
-)
-
-
+      url(r'^managerapp/', include ('managerapp.urls')),
+      url(r'^studentapp/', include ('studentapp.urls')),
+      url(r'^media/(?P<path>.*)$','django.views.static.serve', {'document_root':settings.MEDIA_ROOT,}),
+                       )

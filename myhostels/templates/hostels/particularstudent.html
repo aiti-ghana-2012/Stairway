@@ -48,7 +48,7 @@ $('.carousel').carousel()
     </div>
   </div>
 
-<header>
+<header>  
 <hr />
 
 
@@ -61,12 +61,14 @@ $('.carousel').carousel()
 
 <div class="row">
     <div class="span12"> 
-      <table border = 0 cellpadding = 0 cellspacing = 0 class = "list"><tr>
+      <table border = 0 cellpadding = 0 cellspacing = 0 class = "" ><tr>
 
-<td height = 200 ><div id="pix" class="pix"><img src= "/static/images/uploads/{{ everystudent.picture }}" /></td>
+<td height = 200 ><div id="" class=""><img src="/media/{{ everystudent.picture }}" width ="150" height = "200"/></td>
   <td class = "span8"></td>      
-      </tr>
-      
+      </tr></table>
+<table border = 0 cellpadding  = 0 cellspacing =0 class = "list">
+
+      <tr>
         <td  height="35" width ="200"><label>INDEX_NUMBER:</label></td>
         <td>{{ everystudent.id_number }}</td>
       </tr>
@@ -78,13 +80,13 @@ $('.carousel').carousel()
         <td height="35">OTHER NAMES:</td>
         <td>{{ everystudent.first_name }}</td>
       </tr>
-<tr>
+<!--<tr>
         <td height="35">HOSTEL NAME:</td>
         <td></label></td>
-      </tr
+      </tr-->
       <tr>
         <td height="35">ROOM NUMBER:</td>
-        <td></label></td>
+        <td></label>{{ room_number.room_num }}</td>
       </tr>
       <tr>
         <td height="35">CONTACT NUMBER:</td>

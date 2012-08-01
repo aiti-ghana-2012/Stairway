@@ -21,7 +21,7 @@ $('.carousel').carousel()
 =============================================== -->
   <header class="jumbotron subhead" >
   <div class="row" id = "first-row">
-    <div class="span12"><h1 class="prettyprint linenums">
+    <div class="span12"><h1 class="list">
 
 {% block container%}
 
@@ -61,32 +61,32 @@ $('.carousel').carousel()
     <div class="span12"> 
       <table border = 1 cellpadding = 0 cellspacing = 0 class = "list">
 			
-	       <th > No. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+	       
 	       <th > NAME &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>          
                <th > STUDENT ID &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 	       <th > PROGRAMME OF STUDY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
                <th > GENDER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
 	       <th > ROOM N0. &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-               <th > AMOUNT PAID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+               <!--<th > AMOUNT PAID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>-->
 	       <th > CONTACT NUMBER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-               <th > DATE OF REGISTRATION</th>
+               <!--<th > DATE OF REGISTRATION</th>-->
 		    
                        {% for eachstudent in student_list %} 
                        <tr>
-					   <td >{{ i}}</td>
+					
 					   <td >{{eachstudent.first_name}}&nbsp;&nbsp;{{eachstudent.last_name}}</td>
                                            <td >{{eachstudent.id_number}}</td>
 					   <td >{{eachstudent.program_of_study}}</td>
 					   <td >{{eachstudent.gender}}</td>
-					   <td ></td>
-<td ></td>
+					   <td >{{ room_number.room_num}}</td>
+<!-- <td ></td>-->
 					   <td >{{eachstudent.phone_number}}</td>
-					   <td ></td>
+					  
 
-					   <td ></td>
+					  <!--<td ></td>-->
 </tr>
 					  
- {% endfor %}       
+       {% endfor %}
      </table>
 
      </div>
