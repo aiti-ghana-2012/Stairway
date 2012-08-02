@@ -6,6 +6,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.shortcuts import render_to_response
 from django.views.decorators.csrf import csrf_exempt
 from django.template import Context, loader
+from hostels.models import Hostel, Student
 
 class LoginForm(forms.Form):
     username = forms.CharField()
@@ -21,12 +22,19 @@ def do_login(request):
        if user is not None and user.is_active:
        	   
     	   login(request, user)  # redirect user to a success page
-    	   print 'correct!'
-           return HttpResponseRedirect("/hostels")
-           
+    	   currentuser = request.user
+    	   if Student.objects.filter(user = currentuser).count() is 1:
+               return HttpResponseRedirect("/hostels/homepage/student_confirmation/")
+           elif Hostel.objects.filter(manager =currentuser).count() is 1:
+                return HttpResponseRedirect("/hostels/hostel_manager_page")
+           else:
+                return HttpResponseRedirect ("invalid username and password")
        else:
-           print 'disabled account or error message'
-           return HttpResponse("wrong Username or password. User Authentication failed!!!")  
+           return HttpResponse("wrong Username or password. User Authentication failed!!!") 
+        
+
+           
+              
   
 
     form = LoginForm()

@@ -50,10 +50,10 @@ USE_I18N = True
 
 # If you set this to False, Django will not format dates, numbers and
 # calendars according to the current locale.
-USE_L10N = True
+USE_L10N = False
 
 # If you set this to False, Django will not use timezone-aware datetimes.
-USE_TZ = True
+USE_TZ = False
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -140,8 +140,13 @@ INSTALLED_APPS = ('studentapp',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
+<<<<<<< HEAD
     'django.contrib.admindocs',
     
+=======
+    # 'django.contrib.admindocs',
+    'south',
+>>>>>>> c864b33b62d40ee1bce50001409770061a55b5e4
 )
 
 # A sample logging configuration. The only tangible logging

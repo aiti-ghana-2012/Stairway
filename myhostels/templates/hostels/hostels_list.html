@@ -16,17 +16,14 @@
             <ul class="nav nav-list">
             
             
-            <li><a href="{{ hostel.get_absolute_url }}">{{ hostel.hostel_name }} </a></li>
+            <li><a href="{{ hostel.get_hostel_url }}">{{ hostel.hostel_name }} </a></li>
               
            </ul>
 
            </div>
 {% endfor %}
 
-
-
-
-     <!--/.well -->
+  <!--/.well -->
     </div>
     <div class="span8">
       <section id="carousel">
@@ -61,32 +58,38 @@
   </div>
 
   <hr/>
-<!-- Bottom
+<!-- INSTITUTION DESCRIPTION
 =============================================== -->
-
-  <div class="span12">
+<div class="row">
+  <div class="span9">
     <div class="page-header">
-      <h2 class="center">Brief Description of Distance of Different hostels from KNUST</h2>
-      <p> Welcome to all the different hostels around KNUST. Specifically, Westend Hostels is 20km away from KNUST campus.
-          Brunei Hostel is 10km away from KNUST campus. Splendor Hostels is 5.9km away from KNUST and Frontline Hostels is
-          located on campus.</p>
+      <h4 style="color:DarkGrey ">Brief Description of  {{institution}}</h4>
+      {% for a in description %}
+      <p> {{a.location}}</p>
+            
+      {% endfor %}
     </div>
   </div>
+ <div class="span3">
+ <h5 style="color:DarkGrey ">You can find more information about  {{institution}} in Google search below</h5><br />
+  <form  action="http://www.google.com" method='get'>
+    <fieldset>
+     <div class="clearfix">
+      <input type="text" placeholder="google search">
+    </div>
+   </fieldset>
+   </form>
 </div>
-
+</div>
 
 {% endblock %}
 
 <!-- Additional information on base Footer
-=============================================== -->
+=============================================== 
  
    {%block footeradd1%}
-    <p><a href="#">Hostel Terms and Conditions</a></p>
+    <p><a href="#">FAQ</a></p>
    {% endblock %}
- 
-   {%block footeradd2 %}
-    <p><a href="#">Rules for payment</a></p>
-   {%endblock %}
-
+ -->
 
 

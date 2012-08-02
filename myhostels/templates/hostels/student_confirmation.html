@@ -8,79 +8,68 @@
     <div class="student-confirmation-form">
                   <h2>Student Personal Details</h2>                
                   <form action="">
-                      <fieldset>
-                          <div class="clearfix">
-                              <input type="text" placeholder="Name">
-                          </div>
-                          <div class="clearfix">
-                              <input type="text" placeholder="contact address">
-                          </div>
-                          <div class="clearfix">
-                              <input type="text" placeholder="E-mail address">
-                          </div>
-                          <div class="clearfix">
-                              <input type="text" placeholder="Phone Number">
-                          </div>
-                      </fieldset>
-                  </form>
-              </div>
+       <td class="span8"></td>
+<table border = 0 cellpadding = 0 cellspacing = 0 class = "list"><tr>
+<tr>
+      
+        <td   height="35 " width="50" ><label >Name:</label></td>
+        <td >{{ std.first_name }} &nbsp;&nbsp;{{ std.last_name }}</td>
+      </tr>
+
+<tr>
+      
+        <td   height="35" width="100"><label>E-mail:</label></td>
+        <td >{{ std.email }}</td>
+      </tr>
+<tr>
+      
+        <td   height="35" width="100"><label>Mobile:</label></td>
+        <td >{{ std.phone_number }}</td>
+      </tr>
+</table>
+</form>      
+                     
+              
   </div>
 </div>
 
-<div class="row">
+
   <div class="span12">
                   <h2>Hostel Details</h2>
-                  <form action="">
-                      <fieldset>
-                          <div class="clearfix">
-                              <input type="text" placeholder="Hostel Name">
-                          </div>
-                          <div class="clearfix">
-                              <input type="text" placeholder="Room Number">
-                          </div>
-                          
-                      </fieldset>
-                  </form>
-              </div>
-  </div>
+<table border = 0 cellpadding = 0 cellspacing = 0 class = "list">
+                  
+<tr>
+      
+        <td  height="35" width="100"><label>Hostel Name:</label></td>
+        <td >{{ hos.hostel_name }}</td>
+      </tr>
+<tr>
+      
+        <td  height="35" width="100"><label>Room Number:</label></td>
+        <td ><label id="oname"></label></td>
+      </tr>
+                    
+ </table>                     
+
+ 
 </div>
-<div class="row">
+
   <div class="span12">
-                  <h2>Please Enter Hostel Payment Information</h2> 
-                  <form action="">
-                      <fieldset>
-                          <div class="clearfix">
-                              <input type="text" placeholder="Amountpaid">
-                          </div>
-                          <div class="clearfix">
-                              <input type="text" placeholder="Receipt">
-                          </div>
-                          
-                      </fieldset>
-                  </form>
-              </div>
-  </div>
-</div>
+{% if status %}
+<h1>{{ message }}</h1>
+{% else %}
+<h2>Please Enter Hostel Payment Information</h2> 
+<table border = 0 cellpadding = 0 cellspacing = 0 class = "list">
+<form method="post" class="form-horizontal" action="">
+      {{ form.as_p }} 
+<input type="submit" style="color:#8B0000;height:40px;width:150px" value="Confirm Registration"></input>   
 
+</form> 
 
-<div class="row">
-  <div class="span12">
-    <div class="Confirmation-button-form">
-                  <button type="submit" class="btn" style="color:#8B0000;height:60px;width:150px "><h4><b>SUBMIT TO CONFIRM REGISTATION</b></h4></button>
-
-              </div>
-  </div>
-<!--
-<div class="row">
-  <div class="span4">
-    <div class="Registration button-form">
-                  <p>Thank You For Registrating with Stairway e-hostels</p>
-
-              </div>
-  </div>
-</div>
-
--->
-
+{% endif %}
+                  
+</td>
+</tr>
+</table>
 
 {% endblock %}
